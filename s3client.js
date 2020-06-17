@@ -1,7 +1,7 @@
 const s3 = require('s3');
-const {key, secretKey, host} = require('config.js');
+const {key, secretKey, host} = require('./config.js');
 
-var client = s3.createClient({
+module.exports.client = s3.createClient({
   maxAsyncS3: 20,     // this is the default
   s3RetryCount: 3,    // this is the default
   s3RetryDelay: 1000, // this is the default
@@ -15,6 +15,8 @@ var client = s3.createClient({
     // See: http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/Config.html#constructor-property
   },
 });
+
+
 
 // var params = {
 //   localFile: "some/local/file",

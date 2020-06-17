@@ -12,15 +12,21 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "lorem-ipsum": "2.0.3",
-    "nodemon": "2.0.4",
     "@babel/core": "7.10.2",
     "@babel/preset-env": "7.10.2",
     "@babel/preset-react": "7.10.1",
     "babel-loader": "8.1.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.1.0",
+    "eslint-plugin-import": "^2.21.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.20.0",
+    "eslint-plugin-react-hooks": "^2.5.0",
+    "lorem-ipsum": "2.0.3",
+    "morgan": "1.10.0",
+    "nodemon": "2.0.4",
     "webpack": "4.43.0",
-    "webpack-cli": "3.3.11",
-    "morgan": "1.10.0"
+    "webpack-cli": "3.3.11"
   },
   "dependencies": {
     "axios": "0.19.2",
