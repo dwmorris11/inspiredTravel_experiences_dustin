@@ -2,20 +2,35 @@
   "name": "trip-experiences",
   "version": "1.0.0",
   "description": "* Tripadvisor_Experiences_Dustin",
-  "main": "index.js",
+  "main": "./server/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "react-dev": "webpack --watch",
+    "start": "nodemon server"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "lorem-ipsum": "2.0.3",
-    "nodemon": "2.0.4"
+    "nodemon": "2.0.4",
+    "@babel/core": "7.10.2",
+    "@babel/preset-env": "7.10.2",
+    "@babel/preset-react": "7.10.1",
+    "babel-loader": "8.1.0",
+    "webpack": "4.43.0",
+    "webpack-cli": "3.3.11",
+    "morgan": "1.10.0"
   },
   "dependencies": {
+    "axios": "0.19.2",
+    "bluebird": "3.7.2",
+    "body-parser": "1.19.0",
     "express": "4.17.1",
+    "mongoose": "5.9.19",
+    "n_": "2.0.2",
     "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react-dom": "16.13.1",
+    "s3": "^4.4.0"
   }
 }
