@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "react-dev": "webpack --watch",
-    "start": "nodemon server"
+    "start": "eslint ./ && nodemon server"
   },
   "keywords": [],
   "author": "",
@@ -21,7 +21,7 @@
     "eslint-plugin-import": "^2.21.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.20.0",
-    "eslint-plugin-react-hooks": "^2.5.0",
+    "eslint-plugin-react-hooks": "^2.5.1",
     "lorem-ipsum": "2.0.3",
     "morgan": "1.10.0",
     "nodemon": "2.0.4",
