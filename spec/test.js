@@ -34,3 +34,18 @@ describe('GET ROUTE `/:id`', ()=>{
     expect(_.uniq(ids)).toHaveLength(5);
   });
 });
+
+describe('GET ROUTE `/id` where id does not exist', () => {
+  var response;
+  beforeAll(() => {
+    return axios.get('http://localhost:3636/999')
+    .then((data) => {
+      response = data.data;
+    })
+    .catch((error)=>console.log(error));
+  });
+
+  test('should respond with an empty object', () => {
+    expect(_.isEmpty(response)).toBeTruthy();
+  });
+});

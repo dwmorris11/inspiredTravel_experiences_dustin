@@ -1,0 +1,1 @@
+import '../public/dist/style.css';
