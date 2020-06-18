@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const { quickViewSchema } = require('./quickviewDB.js');
 
 const experiencesSchema = new mongoose.Schema({
   id: { type: Number, unique: true },
@@ -12,7 +13,7 @@ const experiencesSchema = new mongoose.Schema({
   },
   link: String,
   popularity: Number,
-  quickviews: Array,
+  quickview: quickViewSchema,
 }, {
   timestamps: true,
 });
