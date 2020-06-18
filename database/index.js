@@ -1,8 +1,9 @@
 const mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
-const { experienceModel } = require('./experiencesDB.js');
+// const { experienceModel } = require('./experiencesDB.js');
+// const { destinationModel } = require('./destinationDB.js');
 
-const { generateExperienceEntry } = require('./dynamicseed.js');
+// const { generateExperienceEntry } = require('./dynamicseed.js');
 
 const mongoUri = 'mongodb://localhost/experiences';
 const db = mongoose.connect(mongoUri, {
@@ -13,19 +14,35 @@ const dbC = mongoose.connection;
 dbC.on('error', console.error.bind(console, 'connection error: '));
 dbC.once('open', () => console.log('connected'));
 
-const insertSampleExperience = function (entry) {
+/* const insertSampleExperience = function (entry) {
   experienceModel.create(entry)
     .catch((error) => console.log('error: ', error));
-};
+}; */
 
-const seed = (qty, insert) => {
-  for (let i = 0; i < qty + 1; i += 1) {
-    const entry = generateExperienceEntry(i);
-    insert(entry);
-  }
-};
+// const insertDestination = function (entry) {
+//   destinationModel.create(entry)
+//     .catch(() => console.log('error:'));
+// };
+
+// const seed = (qty, insert, entryFunc) => {
+//   for (let i = 0; i < qty + 1; i += 1) {
+//     const entry = entryFunc(i);
+//     insert(entry);
+//   }
+// };
 
 // Run seed script only as necessary
-seed(500, insertSampleExperience);
-
+// seed(500, insertSampleExperience, generateExperienceEntry);
+// seed(100, insertDestination, (index) => {
+//   const experiences = [];
+//   let randomNumber;
+//   for (let j = 0; j < 5; j += 1) {
+//     randomNumber = Math.floor(Math.random() * (500 - 1) + 1);
+//     experiences.push(randomNumber);
+//   }
+//   return {
+//     id: index,
+//     experiences,
+//   };
+// });
 module.exports.db = db;
