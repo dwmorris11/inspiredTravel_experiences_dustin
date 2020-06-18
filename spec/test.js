@@ -10,7 +10,7 @@ describe('GET ROUTE `/:id`', ()=>{
   beforeAll(() => {
     return axios.get('http://localhost:3636/5')
     .then((data) => {
-      response = data;
+      response = data.data;
     })
     .catch((error)=>console.log(error));
   });
@@ -21,7 +21,6 @@ describe('GET ROUTE `/:id`', ()=>{
 
   test('should respond with an array of experiences', () => {
     _.forEach(response, (item) => {
-      console.log(item);
       expect(item).toHaveProperty('id');
       expect(item).toHaveProperty('description');
     });
