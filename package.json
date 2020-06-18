@@ -31,12 +31,14 @@
     "axios": "0.19.2",
     "bluebird": "3.7.2",
     "body-parser": "1.19.0",
+    "css-loader": "^3.6.0",
     "express": "4.17.1",
-    "mongoose": "5.9.19",
     "lorem-ipsum": "2.0.3",
+    "mongoose": "5.9.19",
     "n_": "2.0.2",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "s3": "^4.4.0"
+    "s3": "^4.4.0",
+    "style-loader": "^1.2.1"
   }
 }
