@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest",
     "react-dev": "webpack --watch",
-    "start": "nodemon server"
+    "start": "nodemon server",
+    "lint": "eslint ./"
   },
   "keywords": [],
   "author": "",
