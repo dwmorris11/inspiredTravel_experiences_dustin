@@ -2,9 +2,10 @@ const axios = require('axios');
 const _ = require('lodash');
 
 // get route should respond with an 5 element array of experience JSON objects
-  //count
-  //make sure they are objects
-  //make sure they all have unique ids
+// count
+// make sure they are objects
+// make sure they all have unique ids
+
 describe('GET ROUTE `/:id`', ()=>{
   var response;
   beforeAll(() => {
