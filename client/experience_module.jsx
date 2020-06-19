@@ -1,52 +1,74 @@
 import React from 'react';
 
-const Experience = () => (
-<div className='Experience_Container'>
-<div className='Experience'>
-  <div className='Heart_Container'>
-    <div className='Heart'>
-      <span>
-        <span>
-          <span>
-          </span>
-        </span>
-        <span>
-          <span>
-          </span>
-        </span>
-      </span>
-   </div>
-  </div>
- <div className='Photo'><a><img /></a>
- </div>
- <div className='Description_Container'>
-  <div className='Description'>
-    <a><span id='Description_Text'></span></a>
-    <span className='Review'></span>
-  </div>
- </div>
- <a><div className='Review_Container'>
-     <span className='Review_Circles'></span>
-     <span className='Review_Count'></span>
+const Experience = ({id, image, description, cost_unit}) => (
+  <div className='Experience_Container' id={id} key={id+'ec'}>
+    <div className='Experience'>
+      <div className='Photo'><a><img src={image}/></a>
+      </div>
+    <div className='Description_Container'>
+      <div className='Description'>
+        <a><span id='Description_Text'>{description}</span></a>
+        <span className='Review'></span>
+      </div>
+    </div>
+  <a>
+    <div className='Review_Container'>
+      <span className='Review_Circles'></span>
+      <span className='Review_Count'></span>
     </div></a>
     <div className='Footer_Container'>
       <div className='Cost_Container'>
-        <span className='Cost'></span>
+        <span className='Cost'>${cost_unit.cost} per {cost_unit.unit}</span>
       </div>
       <div className='More_Info'>
-        <button className='More_Info_Button'></button>
+        <button className='More_Info_Button'>More Info</button>
       </div>
     </div>
-  <div className='QuickView'>
-    <div className='QuickView_Button_Container'>
-      <div>
+    <div className='QuickView'>
+      <div className='QuickView_Button_Container'>
         <div>
-          <button className='QuickView_Button'>
-            <span className='QuickView_Eye'></span>
-          </button>
+          <div>
+            <button className='QuickView_Button'>
+              <span className='QuickView_Eye'></span>
+            </button>
+          </div>
         </div>
       </div>
     </div>
+    </div>
   </div>
-</div>
-)
+);
+
+export default Experience;
+
+// const experiencesSchema = new mongoose.Schema({
+//   id: { type: Number, unique: true },
+//   heart: Boolean,
+//   image: String,
+//   description: String,
+//   rating: Number,
+//   cost_unit: {
+//     cost: Number,
+//     unit: String,
+//   },
+//   link: String,
+//   popularity: Number,
+//   quickview: quickViewSchema,
+// }, {
+//   timestamps: true,
+// });
+
+// id: { type: Number, unique: true },
+// category: String,
+// overview: String,
+// languages: Array,
+// vouchers_allowed: Array,
+// tour_time: {
+//   time: Number,
+//   unit: String,
+// },
+// instant_confirmation: Boolean,
+// map_address: {
+//   lat: Number,
+//   lng: Number,
+// },
