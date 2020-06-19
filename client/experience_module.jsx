@@ -1,13 +1,13 @@
 import React from 'react';
 
 const Experience = ({id, image, description, cost_unit}) => (
-  <div className='Experience_Container' id={id} key={id+'ec'}>
-    <div className='Experience'>
+  <div className='Experience_Container Experience_Container2' id={id} key={id+'ec'}>
+    <div className='Experience Experience2'>
       <div className='Photo'><a><img src={image}/></a>
       </div>
     <div className='Description_Container'>
       <div className='Description'>
-        <a><span id='Description_Text'>{description}</span></a>
+        <a className='Review_Link'><span id='Description_Text'>{description}</span></a>
         <span className='Review'></span>
       </div>
     </div>

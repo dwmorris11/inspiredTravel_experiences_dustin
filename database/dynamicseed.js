@@ -17,8 +17,8 @@ const descriptionSeed = new Seeder({
     min: 1,
   },
   wordsPerSentence: {
-    max: 20,
-    min: 10,
+    max: 10,
+    min: 3,
   },
 });
 
