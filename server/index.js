@@ -1,5 +1,4 @@
 const express = require('express');
-const router = express.Router();
 const { db } = require('../database/index.js');
 const { destinationModel } = require('../database/destinationDB.js');
 const { experienceModel } = require('../database/experiencesDB.js');
@@ -16,7 +15,7 @@ const app = express();
 const port = 3636;
 
 app.use(morgan('dev'));
-app.use(router);
+app.use(express.static('/Users/dustinmorris/junior/trip/public/dist'));
 
 const findExperiences = function(destination) {
   return Promise.map(destination[0].experiences, (id) => {
