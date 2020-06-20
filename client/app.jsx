@@ -11,12 +11,11 @@ class App extends React.Component {
     };
   }
   componentDidMount () {
-    axios.get('/5')
-    .then((data) => {
+    axios.get('/005')
+    .then((res) => {
       this.setState({
-        experiences: data.data
+        experiences: res.data
       });
-      console.log(this.state.experiences);
     })
     .catch((error) => console.log(error));
   }
