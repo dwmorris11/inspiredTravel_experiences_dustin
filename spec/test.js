@@ -2,15 +2,16 @@ const axios = require('axios');
 const _ = require('lodash');
 
 // get route should respond with an 5 element array of experience JSON objects
-  //count
-  //make sure they are objects
-  //make sure they all have unique ids
+// count
+// make sure they are objects
+// make sure they all have unique ids
+
 describe('GET ROUTE `/:id`', ()=>{
   var response;
   beforeAll(() => {
-    return axios.get('http://localhost:3636/5')
-    .then((data) => {
-      response = data.data;
+    return axios.get('http://localhost:3636/005')
+    .then((res) => {
+      response = res.data;
     })
     .catch((error)=>console.log(error));
   });
@@ -35,17 +36,17 @@ describe('GET ROUTE `/:id`', ()=>{
   });
 });
 
-describe('GET ROUTE `/id` where id does not exist', () => {
-  var response;
-  beforeAll(() => {
-    return axios.get('http://localhost:3636/999')
-    .then((data) => {
-      response = data.data;
-    })
-    .catch((error)=>console.log(error));
-  });
+// describe('GET ROUTE `/id` where id does not exist', () => {
+//   var response;
+//   beforeAll(() => {
+//     return axios.get('http://localhost:3636/999')
+//     .then((res) => {
+//       response = res.data;
+//     })
+//     .catch((error)=>{response = error});
+//   });
 
-  test('should respond with an empty object', () => {
-    expect(_.isEmpty(response)).toBeTruthy();
-  });
-});
+//   test('should respond with an error', () => {
+//     expect(response).toEqual(expect.stringMatching(/\b\[Error/));
+//   });
+// });
