@@ -1,5 +1,6 @@
 import React from 'react';
-import Experience from './experience_module';
+import Experience from './experience_module.jsx';
+import Toolbar from './toolbar_module.jsx';
 import axios from 'axios';
 
 class App extends React.Component {
@@ -23,13 +24,16 @@ class App extends React.Component {
   render() {
    return (
      <div>
-      {this.state.experiences.map( (exp) => (<Experience
-        cost={exp.cost}
-        id={exp.id}
-        image={this.state.imageBaseUrl + exp.image}
-        description={exp.description}
-        cost_unit={exp.cost_unit}
-      />))}
+        <Toolbar category="Recommended" subtitle="Our most popular tours and activities" />
+      <div className="Parent_Container">
+        {this.state.experiences.map( (exp) => (<Experience
+          cost={exp.cost}
+          id={exp.id}
+          image={this.state.imageBaseUrl + exp.image}
+          description={exp.description}
+          cost_unit={exp.cost_unit}
+        />))}
+      </div>
     </div>
    )
   }
@@ -37,42 +41,3 @@ class App extends React.Component {
 }
 
 export default App;
-
-
-
-
-
-
-
-
-// const experiencesSchema = new mongoose.Schema({
-//   id: { type: Number, unique: true },
-//   heart: Boolean,
-//   image: String,
-//   description: String,
-//   rating: Number,
-//   cost_unit: {
-//     cost: Number,
-//     unit: String,
-//   },
-//   link: String,
-//   popularity: Number,
-//   quickview: quickViewSchema,
-// }, {
-//   timestamps: true,
-// });
-
-// id: { type: Number, unique: true },
-// category: String,
-// overview: String,
-// languages: Array,
-// vouchers_allowed: Array,
-// tour_time: {
-//   time: Number,
-//   unit: String,
-// },
-// instant_confirmation: Boolean,
-// map_address: {
-//   lat: Number,
-//   lng: Number,
-// },
