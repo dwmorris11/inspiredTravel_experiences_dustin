@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
 const { destinationModel } = require('../database/destinationDB.js');
 const { experienceModel } = require('../database/experiencesDB.js');
-
+const { db } = require('../database/index.js');
 // const axios = require('axios');
 // const { client } = require('../s3client.js');
 
@@ -24,17 +24,19 @@ const findExperiences = (destination) => (
 );
 
 app.get('/:id', (req, res) => {
-  const { id } = req.params;
-  if (id < 1 || id > 100) {
-    res.send(JSON.stringify({}));
+  let { id } = req.params;
+  numId = Number(id);
+  if (numId < 1 || numId > 100) {
+    res.status(404).send('ID is out of bounds.  Must be between 001-100');
   }
+  console.log('tostring', `${id}`);
   destinationModel.find({ id: `${id}` })
-    .then((destination) => findExperiences(destination))
+    .then((destination) => ( findExperiences(destination)))
     .then((query) => {
       res.status(200).send(query);
     })
-    .catch(() => res.status(404).send('{}'));
-});
+    .catch((error) => res.status(404).send(error));
+ });
 
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
