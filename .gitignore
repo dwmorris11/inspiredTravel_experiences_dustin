@@ -1,4 +1,5 @@
 node_modules
 config.js
 public/dist/bundle.js
-/client/mocks
+client/mocks
+**/mocks

@@ -1,10 +1,6 @@
 import React from 'react';
-<<<<<<< HEAD
 import Experience from './experience_module.jsx';
 import Toolbar from './toolbar_module.jsx';
-=======
-import Experience from './experience_module';
->>>>>>> 5476cd40ae6236f5079c9a9ba78371d798bf6a65
 import axios from 'axios';
 
 class App extends React.Component {
