@@ -1,6 +1,10 @@
 import React from 'react';
+<<<<<<< HEAD
 import Experience from './experience_module.jsx';
 import Toolbar from './toolbar_module.jsx';
+=======
+import Experience from './experience_module';
+>>>>>>> 5476cd40ae6236f5079c9a9ba78371d798bf6a65
 import axios from 'axios';
 
 class App extends React.Component {
@@ -41,3 +45,45 @@ class App extends React.Component {
 }
 
 export default App;
+<<<<<<< HEAD
+=======
+
+
+
+
+
+
+
+
+// const experiencesSchema = new mongoose.Schema({
+//   id: { type: Number, unique: true },
+//   heart: Boolean,
+//   image: String,
+//   description: String,
+//   rating: Number,
+//   cost_unit: {
+//     cost: Number,
+//     unit: String,
+//   },
+//   link: String,
+//   popularity: Number,
+//   quickview: quickViewSchema,
+// }, {
+//   timestamps: true,
+// });
+
+// id: { type: Number, unique: true },
+// category: String,
+// overview: String,
+// languages: Array,
+// vouchers_allowed: Array,
+// tour_time: {
+//   time: Number,
+//   unit: String,
+// },
+// instant_confirmation: Boolean,
+// map_address: {
+//   lat: Number,
+//   lng: Number,
+// },
+>>>>>>> 5476cd40ae6236f5079c9a9ba78371d798bf6a65
