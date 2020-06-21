@@ -1,6 +1,6 @@
 .Experience_Container {
   flex-basis: calc(25% - 26px);
-  padding: 0 0 32px 24px;
+  padding: 0 8px 32px 15px;
 }
 
 .Experience_Container2 {
@@ -23,17 +23,13 @@
     background: #fff;
 }
 
-.Experience:first-child {
-  padding-left: 16px;
-}
-
 .Experience2 {
   max-width: calc(100% - 2px);
   border: 1px solid #e0e0e0;
   border-radius: 4px;
 }
 
-.Photo {
+img, .Photo {
   object-fit: cover;
   top: 0;
   position: relative;
@@ -43,6 +39,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   max-width: 100%;
+  width: 200em;
   height: auto;
   border: 0;
 }

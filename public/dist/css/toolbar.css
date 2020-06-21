@@ -3,6 +3,8 @@
   flex-direction: row;
   max-width: 100%;
   white-space: nowrap;
+  border: 1px solid gray;
+  background-color: rgba(245, 245, 245, 0.50);
 }
 
 .Toolbar:before {
@@ -30,12 +32,12 @@
   padding: 20px;
   text-align: center;
   cursor: pointer;
-  border: 1px solid #e0e0e0;
-    border-top-style: solid;
-    border-top-width: 3px;
-    border-bottom-style: none;
-    border-right-style: none;
-    border-left-style: none;
+  border-top-style: solid;
+  border-top-color: black;
+  border-top-width: 2px;
+  border-bottom-style: none;
+  border-right: 1px solid gray;
+  border-left: 1px solid gray;
   border-color: gray;
   white-space: nowrap;
   font-size: 14px;

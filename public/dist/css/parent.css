@@ -1,17 +1,17 @@
-.Inner_Data_Container {
-  margin: auto;
-  display: flex;
-  align-items: stretch;
-  box-sizing: border-box;
-  flex-flow: row wrap;
-}
-
 .Outer_Data_Container {
   margin-top: 16px;
   padding-top: 8px;
   margin-right: auto;
   margin-bottom: auto;
   margin-left: auto;
+}
+
+.Inner_Data_Container {
+  margin: auto;
+  display: flex;
+  align-items: stretch;
+  box-sizing: border-box;
+  flex-flow: row wrap;
 }
 
 .Data_Container {
