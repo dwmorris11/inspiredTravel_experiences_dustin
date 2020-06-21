@@ -1,0 +1,66 @@
+.Toolbar {
+  display: flex;
+  flex-direction: row;
+  max-width: 100%;
+  white-space: nowrap;
+}
+
+.Toolbar:before {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 1px;
+  width: 100%;
+  background-color: gray;
+}
+
+.Tab {
+  color: black;
+  position: relative;
+  font-weight: 700;
+  background-color: white;
+  border-bottom-color: white;
+  width: 16.66%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid #e0e0e0;
+    border-top-style: solid;
+    border-top-width: 3px;
+    border-bottom-style: none;
+    border-right-style: none;
+    border-left-style: none;
+  border-color: gray;
+  white-space: nowrap;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.Experience_Category {
+  white-space: normal;
+  color: black;
+  margin: 0;
+  padding: 0;
+  display: block;
+  cursor: pointer;
+}
+
+.Experience_Category_Subtitle {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+  white-space: normal;
+  color: black;
+  margin: 0;
+  padding: 0;
+  display: block;
+  cursor: pointer;
+}
+
+

@@ -1,0 +1,28 @@
+.Inner_Data_Container {
+  margin: auto;
+  display: flex;
+  align-items: stretch;
+  box-sizing: border-box;
+  flex-flow: row wrap;
+}
+
+.Outer_Data_Container {
+  margin-top: 16px;
+  padding-top: 8px;
+  margin-right: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+}
+
+.Data_Container {
+  margin: 0 auto 32px;
+  width: 100%;
+}
+
+.Parent_Container {
+  border: 1px solid #e0e0e0;
+  border-color: gray;
+  border-top: 0 solid gray;
+  padding-top: 1px;
+  background-color: white;
+}

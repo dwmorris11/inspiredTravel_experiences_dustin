@@ -1,0 +1,32 @@
+html body {
+  font-family: 'Trip Sans', Arial, sans-serif !important;
+}
+
+blockquote, dd, div, dl, dt, fieldset, form, h1, h2, h3, h4, h5, h6, input, legend, li, ol, p, pre, td, textarea, th, ul {
+  margin: 0;
+  padding: 0;
+}
+
+div {
+  display: block;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* @media only screen and (min-width:1024px){
+  .QuickView{visibility:visible;opacity:1}
+}
+@media only screen and (min-width:1170px){
+  .QuickView{opacity:0}
+}
+@media only screen and (min-width:1170px){
+  .QuickView{opacity:1}
+  .QuickView{opacity:1}
+} */
