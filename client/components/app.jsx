@@ -24,7 +24,7 @@ class App extends React.Component {
   render() {
    return (
      <div>
-        <Toolbar category="Recommended" subtitle="Our most popular tours and activities" />
+        <Toolbar category={undefined} subtitle={undefined} />
         <Parent experiences={this.state.experiences} imageBaseUrl={this.state.imageBaseUrl}/>
     </div>
    )
