@@ -1,7 +1,7 @@
 const Seeder = require('lorem-ipsum').LoremIpsum;
 const { experienceModel } = require('./experiencesDB.js');
 const { destinationModel } = require('./destinationDB.js');
-const { db } = require('./index.js');
+const { db } = require('./index.js'); // eslint-disable-line
 
 const overviewSeed = new Seeder({
   sentencesPerParagraph: {
@@ -64,7 +64,7 @@ const generateExperienceEntry = function (index) {
   return entry;
 };
 
-  const insertSampleExperience = function (entry) {
+const insertSampleExperience = function (entry) {
   experienceModel.create(entry)
     .catch((error) => console.log('error: ', error));
 };
