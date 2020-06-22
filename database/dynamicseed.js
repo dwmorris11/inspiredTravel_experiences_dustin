@@ -63,7 +63,6 @@ const generateExperienceEntry = function (index) { // eslint-disable-line
   };
   return entry;
 };
-
 const insertSampleExperience = function (entry) { // eslint-disable-line
   experienceModel.create(entry)
     .catch((error) => console.log('error: ', error));  // eslint-disable-line
