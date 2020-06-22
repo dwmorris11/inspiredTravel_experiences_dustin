@@ -3,10 +3,10 @@ import Toolbar from '../client/components/toolbar_module.jsx';
 import Experience from '../client/components/experience_module.jsx';
 import { data } from '../__mocks__/dataMock.js';
 import App from '../client/components/app.jsx';
-import { configure, shallow } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+// import { configure, shallow } from 'enzyme';
+// import Adapter from 'enzyme-adapter-react-16';
 
-configure({ adapter: new Adapter() });
+// configure({ adapter: new Adapter() });
 
 describe('Toolbar Properties', () => {
   const wrapper = shallow(<Toolbar category={data.category} subtitle={data.subtitle} />);

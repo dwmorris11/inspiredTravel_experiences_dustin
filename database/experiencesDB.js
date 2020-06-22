@@ -3,10 +3,10 @@ const { quickViewSchema } = require('./quickviewDB.js');
 
 const experiencesSchema = new mongoose.Schema({
   id: { type: Number, unique: true },
-  heart: Boolean,
   image: String,
   description: String,
   rating: Number,
+  review_counts: Number,
   cost_unit: {
     cost: Number,
     unit: String,

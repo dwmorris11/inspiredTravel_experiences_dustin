@@ -4,7 +4,7 @@
   "description": "* Tripadvisor_Experiences_Dustin",
   "main": "./server/index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --coverage",
     "build": "webpack --watch",
     "start": "nodemon server",
     "lint": "eslint ./",
@@ -18,6 +18,28 @@
     "url": "https://github.com/Seattle-Navigators/tripadvisor_experiences_dustin.git"
   },
   "jest": {
+    "clearMocks": true,
+    "collectCoverage": true,
+    "collectCoverageFrom": ["**/*.{js,jsx}", "!**/node_modules/**",
+      "!**/webpack/**", "!**/lib/**", "!**/public/**"],
+    "coverageDirectory": "coverage",
+    "coveragePathIgnorePatterns": [
+      "<root>/node_modules/",
+      "/__mocks__/",
+      "/mocks/",
+      "/.circleci/",
+      "/quickview/",
+      "/woff$/",
+      "/woff2$/",
+      "/css$/",
+      "/bundle/",
+      "/<root>\/public\/dist\//",
+      "/lib/",
+      "/react/"
+    ],
+    "coverageReporters": [
+      "text"
+    ],
     "transform": {
       "^.+\\.jsx?$": "babel-jest"
     },
