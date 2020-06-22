@@ -7,8 +7,7 @@ const db = mongoose.connect(mongoUri, {
   useUnifiedTopology: true,
 });
 const dbC = mongoose.connection;
-dbC.on('error', console.error.bind(console, 'connection error: '));
-dbC.once('open', () => console.log('connected'));
-
+dbC.on('error', console.error.bind(console, 'connection error: ')); // eslint-disable-line
+dbC.once('open', () => console.log('connected')); // eslint-disable-line
 
 module.exports.db = db;

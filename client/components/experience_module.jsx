@@ -27,11 +27,9 @@ const Experience = ({id, image, description, cost_unit}) => (
     <div className='QuickView'>
       <div className='QuickView_Button_Container'>
         <div>
-          <div>
-            <button className='QuickView_Button'>
-              <span className='QuickView_Eye'>Quick View</span>
-            </button>
-          </div>
+          <button className='QuickView_Button'>
+            <span className='QuickView_Eye'>Quick View</span>
+          </button>
         </div>
       </div>
     </div>
@@ -40,35 +38,3 @@ const Experience = ({id, image, description, cost_unit}) => (
 );
 
 export default Experience;
-
-// const experiencesSchema = new mongoose.Schema({
-//   id: { type: Number, unique: true },
-//   heart: Boolean,
-//   image: String,
-//   description: String,
-//   rating: Number,
-//   cost_unit: {
-//     cost: Number,
-//     unit: String,
-//   },
-//   link: String,
-//   popularity: Number,
-//   quickview: quickViewSchema,
-// }, {
-//   timestamps: true,
-// });
-
-// id: { type: Number, unique: true },
-// category: String,
-// overview: String,
-// languages: Array,
-// vouchers_allowed: Array,
-// tour_time: {
-//   time: Number,
-//   unit: String,
-// },
-// instant_confirmation: Boolean,
-// map_address: {
-//   lat: Number,
-//   lng: Number,
-// },
