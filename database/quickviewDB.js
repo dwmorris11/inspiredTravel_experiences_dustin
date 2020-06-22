@@ -6,6 +6,8 @@ module.exports.quickViewSchema = new mongoose.Schema({
   overview: String,
   languages: Array,
   vouchers_allowed: Array,
+  cancellations: Boolean,
+  supplier: String,
   tour_time: {
     time: Number,
     unit: String,

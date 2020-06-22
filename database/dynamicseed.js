@@ -29,6 +29,7 @@ const generateExperienceEntry = function (index) { // eslint-disable-line
   const rate = Math.floor(Math.random() * (5 - 1)) + 1;
   const costs = Math.floor(Math.random() * (250 - 80)) + 80;
   const popular = Math.floor(Math.random() * (35000 - 1000)) + 1000;
+  const reviews = Math.floor(Math.random() * (3000 -300) + 300);
   const confirm = () => {
     if (rate % 2 === 0) {
       return true;
@@ -42,6 +43,7 @@ const generateExperienceEntry = function (index) { // eslint-disable-line
     image: `${index}.jpg`,
     description: descriptionSeed.generateParagraphs(1),
     rating: rate,
+    review_count: reviews,
     cost_unit: { cost: costs, unit: 'adult' },
     link: '',
     popularity: popular,
@@ -49,7 +51,9 @@ const generateExperienceEntry = function (index) { // eslint-disable-line
       category: descriptionSeed.generateWords(2),
       overview: overviewSeed.generateParagraphs(2),
       languages: [descriptionSeed.generateWords(1)],
-      vouchers_allowed: [descriptionSeed.generateWords(1), descriptionSeed.generateWords(1)],
+      vouchers_allowed: [confirm(), !confirm()],
+      canecellations: confirm(),
+      supplier: descriptionSeed.generateWords(1),
       tour_time: {
         time: rate,
         unit: 'hours',

@@ -6,7 +6,7 @@ const experiencesSchema = new mongoose.Schema({
   image: String,
   description: String,
   rating: Number,
-  review_counts: Number,
+  review_count: Number,
   cost_unit: {
     cost: Number,
     unit: String,

@@ -1,7 +1,16 @@
 import React from 'react';
 
-const QuickView = ({id, image, description, cost_unit}) => (
+class QuickView extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
 
-);
+    };
+  }
+
+  render() {
+    return ()
+  }
+}
 
 export default QuickView;
