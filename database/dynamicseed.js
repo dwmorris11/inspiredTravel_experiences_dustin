@@ -25,7 +25,7 @@ const descriptionSeed = new Seeder({
   },
 });
 
-const generateExperienceEntry = function (index) {
+const generateExperienceEntry = function (index) { // eslint-disable-line
   const rate = Math.floor(Math.random() * (5 - 1)) + 1;
   const costs = Math.floor(Math.random() * (250 - 80)) + 80;
   const popular = Math.floor(Math.random() * (35000 - 1000)) + 1000;
@@ -63,15 +63,14 @@ const generateExperienceEntry = function (index) {
   };
   return entry;
 };
-
-const insertSampleExperience = function (entry) {
+const insertSampleExperience = function (entry) { // eslint-disable-line
   experienceModel.create(entry)
-    .catch((error) => console.log('error: ', error));
+    .catch((error) => console.log('error: ', error));  // eslint-disable-line
 };
 
-const insertDestination = function (entry) {
+const insertDestination = function (entry) { // eslint-disable-line
   destinationModel.create(entry)
-    .catch(() => console.log('error:'));
+    .catch(() => console.log('error:')); // eslint-disable-line
 };
 
 const seed = (qty, insert, entryFunc) => {

@@ -1,0 +1,23 @@
+@font-face {
+  font-family: 'Trip Sans';
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+  src: url('../TripSans-Regular.woff2') format('woff2');
+ }
+
+@font-face {
+  font-family: 'Trip Sans';
+  font-style: normal;
+  font-weight: bold;
+  font-display: swap;
+  src: url('../TripSans-Medium.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'icomoon';
+  font-style: normal;
+  font-weight: bold;
+  font-display: swap;
+  src: url('../icomoon.woff') format('woff');
+}

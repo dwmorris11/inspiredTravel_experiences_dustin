@@ -24,5 +24,5 @@ module.exports = {
   ],
   rules: {
   },
-  ignorePatterns: [ 'bundle.js', 'jest.config.js', 'test.js', 's3client.js', 'index.js' ],
+  ignorePatterns: [ 'bundle.js', 'jest.config.js', 'test.js', 's3client.js', 'fe.test.js', 'dataMock.js' ],
 };

@@ -6,6 +6,7 @@ module.exports = {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'public', 'dist'),
   },
+  devtool: 'inline-source-map',
   module: {
     rules: [
       {
@@ -14,9 +15,6 @@ module.exports = {
         use: [
           {
             loader: 'babel-loader',
-            options: {
-              presets: ['@babel/preset-env', '@babel/preset-react'],
-            },
           },
         ],
       },
@@ -42,7 +40,4 @@ module.exports = {
     ],
   },
   mode: 'development',
-  resolve: {
-    extensions: ['.js', '.jsx'],
-  },
 };
