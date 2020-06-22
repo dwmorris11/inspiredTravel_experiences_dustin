@@ -3,3 +3,4 @@ config.js
 public/dist/bundle.js
 client/mocks
 **/mocks
+__mocks__

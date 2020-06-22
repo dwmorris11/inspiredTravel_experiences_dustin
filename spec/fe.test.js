@@ -1,4 +1,5 @@
-import App from '../client/app.jsx';
+
+import App from '../client/components/app.jsx';
 
 describe('Fake Test', () => {
 

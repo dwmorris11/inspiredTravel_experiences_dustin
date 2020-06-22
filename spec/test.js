@@ -8,13 +8,13 @@ const _ = require('lodash');
 
 describe('GET ROUTE `/:id`', ()=>{
   var response;
-  beforeAll(() => {
-    return axios.get('http://localhost:3636/005')
-    .then((res) => {
-      response = res.data;
-    })
-    .catch((error)=>console.log(error));
-  });
+  // beforeAll(() => {
+  //   return axios.get('http://localhost:3636/005')
+  //   .then((res) => {
+  //     response = res.data;
+  //   })
+  //   .catch((error)=>console.log(error));
+  // });
 
   test('should respond with an array of 5', () => {
     expect(response).toHaveLength(5);
