@@ -1,37 +1,40 @@
-
 module.exports.data = {
-  "id" : 0,
-  "category" : "TODO: ADD A CATEGORY",
-  "subtitle" : "TODO: ADD A SUBTITLE",
-	"heart" : false,
-	"image" : "0.jpg",
-	"description" : "Proident Lorem aliquip nostrud consequat excepteur.",
-	"rating" : 2,
-	"cost_unit" : {
-		"cost" : 188,
-		"unit" : "adult"
-	},
-	"link" : "",
-	"popularity" : 2803,
-	"quickview" : {
-		"languages" : [
-			"ad"
-		],
-		"vouchers_allowed" : [
-			"fugiat",
-			"ad"
-		],
-		"category" : "irure aliquip",
-		"overview" : "Quis culpa do do qui voluptate commodo cupidatat Lorem esse do. Enim pariatur amet irure exercitation excepteur sit laborum incididunt proident exercitation excepteur qui. Tempor do veniam voluptate aliqua exercitation qui enim incididunt eu proident nisi. Ut est sunt dolor nostrud irure excepteur irure enim magna. Ad ea excepteur qui.\nEsse laborum pariatur ut labore commodo consequat ex eiusmod consectetur nulla amet. Adipisicing ad adipisicing ea minim aliqua nulla consectetur. Non in culpa veniam esse aliquip veniam minim Lorem est id aliquip sit aliqua exercitation quis. Eiusmod laboris proident exercitation eu quis nisi magna. Minim veniam sunt tempor quis id incididunt ullamco fugiat qui officia irure deserunt veniam. Deserunt amet amet fugiat ipsum adipisicing proident dolore Lorem sit ad tempor commodo commodo.",
-		"tour_time" : {
-			"time" : 2,
-			"unit" : "hours"
+		"id" : 3,
+		"category" : "est laborum",
+		"subtitle" : "amet eu nulla irure",
+		"image" : "3.jpg",
+		"description" : "Duis aliquip aliqua.",
+		"rating" : 1,
+		"review_count" : 2026,
+		"cost_unit" : {
+						"cost" : 112,
+						"unit" : "adult"
 		},
-		"instant_confirmation" : true,
-		"map_address" : {
-			"lat" : 37.0902405,
-			"lng" : -95.7128906
-		}
-	},
-  "__v" : 0
+		"link" : "",
+		"popularity" : 15813,
+		"quickview" : {
+						"details" : {
+										"tour_time" : {
+														"time" : 1,
+														"unit" : "hours"
+										},
+										"languages" : [
+														"in"
+										],
+										"vouchers_allowed" : [
+														false,
+														true
+										],
+										"instant_confirmation" : false
+						},
+						"category" : "id Lorem",
+						"subtitle" : "excepteur quis",
+						"overview" : "Et eu labore amet laboris nostrud amet officia esse. Aliqua esse ipsum est ad ea qui adipisicing non quis. Proident veniam nostrud nisi ipsum dolor laboris dolore quis amet aliqua magna est eiusmod. Exercitation ullamco anim ipsum fugiat Lorem adipisicing ea laborum. Excepteur Lorem ea laborum aliquip amet minim velit dolore cillum aute velit tempor ea. Laborum id ad veniam amet duis ea aliqua dolor velit.\nIncididunt elit eu sint laboris dolore voluptate. Non consequat deserunt anim. Exercitation incididunt veniam reprehenderit eiusmod. Minim excepteur esse ad amet laboris dolor ipsum laboris Lorem proident aliqua exercitation laboris velit voluptate. In ut consectetur do nisi laborum do nisi ut dolore. Tempor exercitation aliqua tempor aliquip labore velit cillum esse labore labore aliqua consectetur Lorem. Sint adipisicing id ea est nostrud esse pariatur sit.",
+						"supplier" : "excepteur",
+						"map_address" : {
+										"lat" : 37.0902405,
+										"lng" : -95.7128906
+						}
+		},
+		"__v" : 0
 }
