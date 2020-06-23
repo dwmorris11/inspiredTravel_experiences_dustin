@@ -20,8 +20,13 @@
   "jest": {
     "clearMocks": true,
     "collectCoverage": true,
-    "collectCoverageFrom": ["**/*.{js,jsx}", "!**/node_modules/**",
-      "!**/webpack/**", "!**/lib/**", "!**/public/**"],
+    "collectCoverageFrom": [
+      "**/*.{js,jsx}",
+      "!**/node_modules/**",
+      "!**/webpack/**",
+      "!**/lib/**",
+      "!**/public/**"
+    ],
     "coverageDirectory": "coverage",
     "coveragePathIgnorePatterns": [
       "<root>/node_modules/",
@@ -33,7 +38,7 @@
       "/woff2$/",
       "/css$/",
       "/bundle/",
-      "/<root>\/public\/dist\//",
+      "/<root>/public/dist//",
       "/lib/",
       "/react/"
     ],

@@ -1,7 +1,7 @@
 import React from 'react';
 import QuickViewDetails from './quickview_details';
 
-const QuickViewBody = ({imageBaseUrl, image, mapSource, overview}) => (
+const QuickViewBody = ({imageBaseUrl, image, mapSource, overview, details}) => (
 <div className="QuickViewBodyContainer">
   <div className="ui_columns ">
     <div className="ui_column is-6 ">
@@ -15,7 +15,7 @@ const QuickViewBody = ({imageBaseUrl, image, mapSource, overview}) => (
         <div className="QuickViewBodyOverview">
           <span>{overview}</span>
         </div>
-        <QuickViewDetails />
+        <QuickViewDetails details={details}/>
     </div>
   </div>
   <div class="QuickViewExitButton" role="button" tabindex="0">

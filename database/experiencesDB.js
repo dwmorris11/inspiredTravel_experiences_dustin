@@ -3,6 +3,8 @@ const { quickViewSchema } = require('./quickviewDB.js');
 
 const experiencesSchema = new mongoose.Schema({
   id: { type: Number, unique: true },
+  category: String,
+  subtitle: String,
   image: String,
   description: String,
   rating: Number,

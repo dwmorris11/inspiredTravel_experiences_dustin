@@ -14,12 +14,13 @@ const QuickViewContainer = (
     imageBaseUrl,
     image,
     mapSource,
-    overview
+    overview,
+    details
   }) => (
   <QuickViewHeader category={category} subtitle={subtitle} />
   <QuickViewRating rating={rating} reviewCount={reviewCount} supplier={supplier}/>
   <QuickViewPrice cost={cost}/>
-  <QuickViewBody imageBaseUrl={imageBaseUrl} image={image} mapSource={mapSource}, overview={overview}/>
+  <QuickViewBody imageBaseUrl={imageBaseUrl} image={image} mapSource={mapSource}, overview={overview} detail={details}/>
 );
 
 export default QuickViewContainer;

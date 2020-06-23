@@ -29,7 +29,7 @@ const generateExperienceEntry = function (index) { // eslint-disable-line
   const rate = Math.floor(Math.random() * (5 - 1)) + 1;
   const costs = Math.floor(Math.random() * (250 - 80)) + 80;
   const popular = Math.floor(Math.random() * (35000 - 1000)) + 1000;
-  const reviews = Math.floor(Math.random() * (3000 -300) + 300);
+  const reviews = Math.floor(Math.random() * (3000 - 300)) + 300;
   const confirm = () => {
     if (rate % 2 === 0) {
       return true;
@@ -39,7 +39,8 @@ const generateExperienceEntry = function (index) { // eslint-disable-line
 
   const entry = {
     id: index,
-    heart: false,
+    category: descriptionSeed.generateWords(2),
+    subtitle: descriptionSeed.generateWords(4),
     image: `${index}.jpg`,
     description: descriptionSeed.generateParagraphs(1),
     rating: rate,
@@ -49,19 +50,22 @@ const generateExperienceEntry = function (index) { // eslint-disable-line
     popularity: popular,
     quickview: {
       category: descriptionSeed.generateWords(2),
+      subtitle: descriptionSeed.generateWords(2),
       overview: overviewSeed.generateParagraphs(2),
-      languages: [descriptionSeed.generateWords(1)],
-      vouchers_allowed: [confirm(), !confirm()],
-      canecellations: confirm(),
       supplier: descriptionSeed.generateWords(1),
-      tour_time: {
-        time: rate,
-        unit: 'hours',
-      },
-      instant_confirmation: confirm(),
       map_address: {
         lat: 37.0902405,
         lng: -95.7128906,
+      },
+      details: {
+        languages: [descriptionSeed.generateWords(1)],
+        vouchers_allowed: [confirm(), !confirm()],
+        canecellations: confirm(),
+        tour_time: {
+          time: rate,
+          unit: 'hours',
+        },
+        instant_confirmation: confirm(),
       },
     },
   };
