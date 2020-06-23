@@ -5,7 +5,7 @@ const QuickViewBody = ({imageBaseUrl, image, mapSource, overview, details}) => (
 <div className="QuickViewBodyContainer">
   <div className="ui_columns ">
     <div className="ui_column is-6 ">
-      <img src={imageBaseUrl + image} className="QuickViewImage" />
+      <img className="QuickViewImage" src={imageBaseUrl + image} />
       <span data-test-target="staticMapSnapshot">
         <img alt="" className="QuickViewImage" src={mapSource} />
       </span>

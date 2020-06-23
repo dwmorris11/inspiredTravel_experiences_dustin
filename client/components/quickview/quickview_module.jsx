@@ -32,22 +32,3 @@ class QuickView extends React.Component {
 }
 
 export default QuickView;
-
-id: { type: Number, unique: true },
-category: String,
-subtitle: String,
-overview: String,
-languages: Array,
-vouchers_allowed: Array,
-cancellations: Boolean,
-supplier: String,
-tour_time: {
-  time: Number,
-  unit: String,
-},
-instant_confirmation: Boolean,
-map_address: {
-  lat: Number,
-  lng: Number,
-},
-});

@@ -33,7 +33,6 @@
       "/__mocks__/",
       "/mocks/",
       "/.circleci/",
-      "/quickview/",
       "/woff$/",
       "/woff2$/",
       "/css$/",

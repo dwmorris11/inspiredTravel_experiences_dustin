@@ -1,12 +1,10 @@
 import React from 'react';
 import Toolbar from '../client/components/toolbar_module.jsx';
 import Experience from '../client/components/experience_module.jsx';
+import QuickView from '../client/components/quickview/quickview_module.jsx';
+import QuickViewBody from '../client/components/quickview/quickview_body.jsx';
 import { data } from '../__mocks__/dataMock.js';
 import App from '../client/components/app.jsx';
-// import { configure, shallow } from 'enzyme';
-// import Adapter from 'enzyme-adapter-react-16';
-
-// configure({ adapter: new Adapter() });
 
 describe('Toolbar Properties', () => {
   const wrapper = shallow(<Toolbar category={data.category} subtitle={data.subtitle} />);
@@ -49,4 +47,34 @@ describe('Experience Properties', ()=> {
   it('Should have a QuickView button', () => {
     expect(wrapper.containsMatchingElement(<button><span>Quick View</span></button>)).toBe(true);
   });
-})
+});
+
+describe('Quickview Body Properties', () => {
+  const imageBaseUrl = 'https://images-trip.s3.us-east-2.amazonaws.com/';
+  const mapSource ='klksdjf'; // TODO
+  const wrapper = shallow(
+    <QuickViewBody
+     imageBaseUrl={imageBaseUrl}
+     image={data.image}
+     mapSource={mapSource}
+     overview={data.quickview.overview}
+     detail={data.details}/>);
+
+  it('Should have an image', () => {
+    const imageUrl = imageBaseUrl + data.image;
+    expect(wrapper.containsMatchingElement(<img src={imageUrl}/>)).toBe(true);
+  });
+
+  it('Should have a map', () => {
+    expect(wrapper.containsMatchingElement(<img src={mapSource}/>)).toBe(true);
+  });
+
+  it('Should have an overview', () => {
+    expect(wrapper.containsMatchingElement(<span>{data.quickview.overview}</span>)).toBe(true);
+  });
+
+  it('Should have an exit button', () => {
+    expect(wrapper.containsMatchingElement(<div class="QuickViewExitButton" role="button" tabindex="0"></div>)).toBe(true);
+  });
+
+});
