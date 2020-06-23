@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import _ from 'lodash';
 import Parent from './parent_module.jsx';
 import Toolbar from './toolbar_module.jsx';
 import Quickview from './quickview/quickview_module.jsx';
@@ -14,7 +15,7 @@ class App extends React.Component {
     };
   }
   componentDidMount () {
-    axios.get('/005')
+    axios.get('/005') // TODO
     .then((res) => {
       this.setState({
         experiences: res.data
@@ -24,9 +25,12 @@ class App extends React.Component {
   }
 
   render() {
+    if(_.isEmpty(this.state.experiences)) {
+      return (<div></div>)
+    }
    return (
      <div>
-        <Toolbar category={this.state.experiences.category} subtitle={this.state.experiences.subtitle} />
+        <Toolbar category={this.state.experiences[0].category} subtitle={this.state.experiences[0].subtitle} />
         <Parent experiences={this.state.experiences} imageBaseUrl={this.state.imageBaseUrl}/>
         <Quickview
           experiences={this.state.experiences}

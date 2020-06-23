@@ -1,5 +1,6 @@
 import React from 'react';
-import QuickViewContainer from './quickview_container';
+import _ from 'lodash';
+import QuickViewContainer from './quickview_container.jsx';
 
 class QuickView extends React.Component {
   constructor(props) {
@@ -13,6 +14,9 @@ class QuickView extends React.Component {
   }
 
   render() {
+    if(_.isEmpty(this.state.experiences) || this.state.experiences.quickview === undefined) {
+      return ('');
+    }
     return (
       <QuickViewContainer
         category={this.state.experiences.quickview.category}

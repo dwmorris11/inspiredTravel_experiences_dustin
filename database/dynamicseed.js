@@ -72,19 +72,27 @@ const generateExperienceEntry = function (index) { // eslint-disable-line
   return entry;
 };
 const insertSampleExperience = function (entry) { // eslint-disable-line
-  experienceModel.create(entry)
-    .catch((error) => console.log('error: ', error));  // eslint-disable-line
+   return experienceModel.create(entry)
+   .catch((error) => {
+     console.log('catch');
+     return error;
+   });
 };
 
 const insertDestination = function (entry) { // eslint-disable-line
-  destinationModel.create(entry)
-    .catch(() => console.log('error:')); // eslint-disable-line
+    return destinationModel.create(entry)
+    .catch((error) => {
+      console.log('catch');
+      return error;
+    } );
 };
 
 const seed = (qty, insert, entryFunc) => {
-  for (let i = 0; i < qty + 1; i += 1) {
-    const entry = entryFunc(i);
-    insert(entry);
+  for(let i = 0; i < qty ; i+=1) {
+    insert(entryFunc(i))
+    .catch(() => {
+      console.log('error inserting #', i);
+    });
   }
 };
 

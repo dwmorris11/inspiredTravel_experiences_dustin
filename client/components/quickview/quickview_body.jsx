@@ -1,5 +1,5 @@
 import React from 'react';
-import QuickViewDetails from './quickview_details';
+import QuickViewDetails from './quickview_details.jsx';
 
 const QuickViewBody = ({imageBaseUrl, image, mapSource, overview, details}) => (
 <div className="QuickViewBodyContainer">

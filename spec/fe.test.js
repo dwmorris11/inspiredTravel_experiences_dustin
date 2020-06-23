@@ -8,15 +8,15 @@ import App from '../client/components/app.jsx';
 
 describe('Toolbar Properties', () => {
   const wrapper = shallow(<Toolbar category={data.category} subtitle={data.subtitle} />);
-  it('Should display a category', ()=>{
+  it('Should display a category', () => {
     expect(wrapper.find('.Experience_Category').text()).toEqual(expect.anything());
   });
-  it('Should display a subtitle', ()=>{
+  it('Should display a subtitle', () => {
     expect(wrapper.find('.Experience_Category_Subtitle').text()).toEqual(expect.anything());
   });
 });
 
-describe('Experience Properties', ()=> {
+describe('Experience Properties', () => {
   const imageBaseUrl = 'https://images-trip.s3.us-east-2.amazonaws.com/';
   const wrapper = shallow(
     <Experience

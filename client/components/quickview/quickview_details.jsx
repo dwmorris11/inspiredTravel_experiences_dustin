@@ -33,7 +33,7 @@ const QuickViewDetailsRow = ({detail}) => {
     }
   }
   <div className="QuickViewDetailIcon">
-    <span className="DetailIcon"></span>
+    <span className="DetailIcon"></span> // TODO
       <div className="Detail">{display}
       </div>
   </div>
