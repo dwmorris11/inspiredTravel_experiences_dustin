@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Experience from './experience_module.jsx';
+import Experience from './experience_module.jsx'; // eslint-disable-line
 
 const Parent = ({ experiences, imageBaseUrl }) => (
   <div className="Parent_Container">

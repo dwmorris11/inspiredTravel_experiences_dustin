@@ -24,7 +24,6 @@ module.exports = {
     'react',
   ],
   rules: {
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
   },
   ignorePatterns: [ 'bundle.js', 'jest.config.js', 'test.js', 's3client.js', 'fe.test.js', 'dataMock.js' ],
 };

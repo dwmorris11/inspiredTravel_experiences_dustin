@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import QuickViewDetails from './quickview_details.jsx';
+import QuickViewDetails from './quickview_details.jsx'; // eslint-disable-line
 
 const QuickViewBody = ({
   imageBaseUrl, image, mapSource, overview, details,
