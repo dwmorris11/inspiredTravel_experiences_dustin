@@ -83,10 +83,7 @@ const insertDestination = function (entry) { // eslint-disable-line
 
 const seed = (qty, insert, entryFunc) => {
   for (let i = 0; i < qty; i += 1) {
-    insert(entryFunc(i))
-      .catch(() => {
-        console.log('error inserting #', i); // eslint-disable-line
-      });
+    insert(entryFunc(i));
   }
 };
 
