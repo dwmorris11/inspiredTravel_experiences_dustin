@@ -23,6 +23,10 @@ const findExperiences = (destination) => (
   ))
 );
 
+app.get('/', (req, res) => {
+  res.status(200).send();
+});
+
 app.get('/:id', (req, res) => {
   const { id } = req.params;
   const numId = Number(id);
