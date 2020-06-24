@@ -13,6 +13,13 @@ jobs:
             - run: npm install
             - run: npx webpack
             - run: npm run lint
+  start:
+    docker:
+      - image: circleci/node:dubnium
+    steps:
+      - checkout
+      - node/with-cache:
+          steps:
             - run: npm run circleStart
   test:
     docker:
@@ -27,5 +34,11 @@ workflows:
   build_and_test:
     jobs:
       - build
-      - test
+      - start:
+          requires:
+            - build
+      - test:
+          requires:
+            - build
+
 
