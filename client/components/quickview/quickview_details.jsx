@@ -21,7 +21,13 @@ const QuickViewDetails = ({ details }) => {
 };
 
 QuickViewDetails.propTypes = {
-  details: PropTypes.arrayOf(PropTypes.array).isRequired,
+  details: PropTypes.shape({
+    languages: PropTypes.arrayOf(PropTypes.string),
+    tour_time: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.number, PropTypes.string])),
+    vouchers_allowed: PropTypes.arrayOf(PropTypes.bool),
+    instant_confirmation: PropTypes.bool,
+    cancellations: PropTypes.bool,
+  }).isRequired,
 };
 
 const QuickViewDetailsRow = ({ detail }) => {
@@ -68,7 +74,13 @@ const QuickViewDetailsRow = ({ detail }) => {
 };
 
 QuickViewDetailsRow.propTypes = {
-  detail: PropTypes.objectOf(PropTypes.object).isRequired,
+  detail: PropTypes.oneOfType([
+    PropTypes.objectOf(PropTypes.arrayOf(PropTypes.string)),
+    PropTypes.objectOf(PropTypes.objectOf(PropTypes
+      .oneOfType([PropTypes.number, PropTypes.string]))),
+    PropTypes.objectOf(PropTypes.arrayOf(PropTypes.bool)),
+    PropTypes.objectOf(PropTypes.bool),
+  ]).isRequired,
 };
 
 export default QuickViewDetails;

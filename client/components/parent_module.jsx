@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Experience from './experience_module';
+import Experience from './experience_module.jsx';
 
 const Parent = ({ experiences, imageBaseUrl }) => (
   <div className="Parent_Container">
@@ -9,7 +9,6 @@ const Parent = ({ experiences, imageBaseUrl }) => (
         <div className="Inner_Data_Container">
           {experiences.map((exp) => (
             <Experience
-              cost={exp.cost}
               id={exp.id}
               image={imageBaseUrl + exp.image}
               description={exp.description}

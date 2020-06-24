@@ -1,7 +1,7 @@
 import React from 'react';
 import _ from 'lodash';
 import PropTypes from 'prop-types';
-import QuickViewContainer from './quickview_container';
+import QuickViewContainer from './quickview_container.jsx';
 
 class QuickView extends React.Component {
   constructor(props) {

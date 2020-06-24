@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import QuickViewDetails from './quickview_details';
+import QuickViewDetails from './quickview_details.jsx';
 
 const QuickViewBody = ({
   imageBaseUrl, image, mapSource, overview, details,
@@ -30,7 +30,13 @@ QuickViewBody.propTypes = {
   image: PropTypes.string.isRequired,
   mapSource: PropTypes.string.isRequired,
   overview: PropTypes.string.isRequired,
-  details: PropTypes.string.isRequired,
+  details: PropTypes.shape({
+    languages: PropTypes.arrayOf(PropTypes.string),
+    tour_time: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.number, PropTypes.string])),
+    vouchers_allowed: PropTypes.arrayOf(PropTypes.bool),
+    instant_confirmation: PropTypes.bool,
+    cancellations: PropTypes.bool,
+  }).isRequired,
 };
 
 export default QuickViewBody;

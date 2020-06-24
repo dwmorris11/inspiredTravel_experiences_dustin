@@ -1,9 +1,9 @@
 import React from 'react';
 import axios from 'axios';
 import _ from 'lodash';
-import Parent from './parent_module';
-import Toolbar from './toolbar_module';
-import Quickview from './quickview/quickview_module';
+import Parent from './parent_module.jsx';
+import Toolbar from './toolbar_module.jsx';
+import Quickview from './quickview/quickview_module.jsx';
 
 class App extends React.Component {
   constructor(props) {

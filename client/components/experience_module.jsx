@@ -50,7 +50,10 @@ Experience.propTypes = {
   id: PropTypes.number.isRequired,
   image: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  costUnit: PropTypes.objectOf(PropTypes.object).isRequired,
+  costUnit: PropTypes.shape({
+    cost: PropTypes.number,
+    unit: PropTypes.string,
+  }).isRequired,
 };
 
 export default Experience;
