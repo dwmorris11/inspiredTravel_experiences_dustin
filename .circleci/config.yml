@@ -1,12 +1,11 @@
 version: 2.1
 orbs:
   node: circleci/node@1.1.6
-executors:
-  docker:
-        - image: circleci/node:dubnium
-        - image: circleci/mongo:4.2.7
 jobs:
   build:
+    docker:
+      - image: circleci/node:dubnium
+      - image: circleci/mongo:4.2.7
     steps:
       - checkout
       - node/with-cache:
@@ -15,12 +14,16 @@ jobs:
             - run: npx webpack
             - run: npm run lint
   start:
+    docker:
+        - image: circleci/node:dubnium
     steps:
       - checkout
       - node/with-cache:
           steps:
             - run: npm run circleStart
   test:
+    docker:
+      - image: circleci/node:dubnium
     steps:
       - checkout
       - run:
