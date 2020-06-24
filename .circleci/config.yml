@@ -28,7 +28,7 @@ jobs:
       - checkout
       - run:
           name: Wait for server to start
-          command: dockerize --wait tcp://127.0.0.1:3636 -timeout 120s
+          command: dockerize --wait http://127.0.0.1:3636 -timeout 120s
       - node/with-cache:
           steps:
             - run: npm run seed
