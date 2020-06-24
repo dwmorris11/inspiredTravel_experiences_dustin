@@ -19,13 +19,13 @@ jobs:
                   npx webpack
                   npm run lint
             - run:
+                command: npm run seed
+            - run:
                 command: npm run circleStart
                 background: true
             - run:
                 name: Wait for server to start
                 command: dockerize --wait http://127.0.0.1:3636/001 -timeout 120s
-            - run:
-                command: npm run seed
             - run:
                 command: npm run test
 workflows:
