@@ -1,9 +1,9 @@
 import React from 'react';
 import axios from 'axios';
 import _ from 'lodash';
-import Parent from './parent_module.jsx';
-import Toolbar from './toolbar_module.jsx';
-import Quickview from './quickview/quickview_module.jsx';
+import Parent from './parent_module';
+import Toolbar from './toolbar_module';
+import Quickview from './quickview/quickview_module';
 
 class App extends React.Component {
   constructor(props) {
@@ -11,37 +11,37 @@ class App extends React.Component {
     this.state = {
       experiences: [],
       imageBaseUrl: 'https://images-trip.s3.us-east-2.amazonaws.com/',
-      quickViewVisibility: false
+      quickViewVisibility: false,
     };
   }
-  componentDidMount () {
+
+  componentDidMount() {
     axios.get('/005') // TODO
-    .then((res) => {
-      this.setState({
-        experiences: res.data
-      });
-    })
-    .catch((error) => console.log(error));
+      .then((res) => {
+        this.setState({
+          experiences: res.data,
+        });
+      })
+      .catch((error) => console.log(error)); // eslint-disable-line
   }
 
   render() {
-    if(_.isEmpty(this.state.experiences)) {
-      return (<div></div>)
+    const { experiences, imageBaseUrl, quickViewVisibility } = this.state;
+    if (_.isEmpty(experiences)) {
+      return (<div />);
     }
-   return (
-     <div>
-        <Toolbar category={this.state.experiences[0].category} subtitle={this.state.experiences[0].subtitle} />
-        <Parent experiences={this.state.experiences} imageBaseUrl={this.state.imageBaseUrl}/>
+    return (
+      <div>
+        <Toolbar category={experiences[0].category} subtitle={experiences[0].subtitle} />
+        <Parent experiences={experiences} imageBaseUrl={imageBaseUrl} />
         <Quickview
-          experiences={this.state.experiences}
-          imageBaseUrl={this.state.imageBaseUrl}
-          visibility={this.state.quickViewVisibility} />
-    </div>
-   )
+          experiences={experiences}
+          imageBaseUrl={imageBaseUrl}
+          visibility={quickViewVisibility}
+        />
+      </div>
+    );
   }
-
 }
-
-
 
 export default App;

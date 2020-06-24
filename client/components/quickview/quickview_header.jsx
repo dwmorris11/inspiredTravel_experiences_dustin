@@ -1,13 +1,20 @@
-  import React from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
-  const QuickViewHeader = ({category, subtitle}) => (
-    <div className="QuickViewColumn">
-      <div className="QuickViewCategory">
-        <span>{category}</span>
-      </div>
-      <div className="QuickViewSubtitle">{subtitle}
-      </div>
+const QuickViewHeader = ({ category, subtitle }) => (
+  <div className="QuickViewColumn">
+    <div className="QuickViewCategory">
+      <span>{category}</span>
     </div>
-  );
+    <div className="QuickViewSubtitle">
+      {subtitle}
+    </div>
+  </div>
+);
 
-  export default QuickViewHeader;
+QuickViewHeader.propTypes = {
+  category: PropTypes.string.isRequired,
+  subtitle: PropTypes.string.isRequired,
+};
+
+export default QuickViewHeader;

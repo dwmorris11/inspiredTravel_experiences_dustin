@@ -60,7 +60,7 @@ const generateExperienceEntry = function (index) { // eslint-disable-line
       details: {
         languages: [descriptionSeed.generateWords(1)],
         vouchers_allowed: [confirm(), !confirm()],
-        canecellations: confirm(),
+        cancellations: confirm(),
         tour_time: {
           time: rate,
           unit: 'hours',

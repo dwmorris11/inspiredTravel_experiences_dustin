@@ -1,38 +1,44 @@
 import React from 'react';
 import _ from 'lodash';
-import QuickViewContainer from './quickview_container.jsx';
+import PropTypes from 'prop-types';
+import QuickViewContainer from './quickview_container';
 
 class QuickView extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      visible: props.visbility,
+      // visible: props.visbility,
       experiences: props.experiences,
       imageBaseUrl: props.imageBaseUrl,
-      mapSource: ''
+      mapSource: '',
     };
   }
 
   render() {
-    if(_.isEmpty(this.state.experiences) || this.state.experiences.quickview === undefined) {
+    const { experiences, imageBaseUrl, mapSource } = this.state;
+    if (_.isEmpty(experiences) || experiences.quickview === undefined) {
       return ('');
     }
     return (
       <QuickViewContainer
-        category={this.state.experiences.quickview.category}
-        subtitle ={this.state.experiences.quickview.subtitle}
-        rating={this.state.experiences.rating}
-        reviewCount={this.state.experiences.reviewCount}
-        supplier={this.state.experiences.quickview.supplier}
-        cost={this.state.experiences.cost_unit.cost}
-        imageBaseUrl={this.state.imageBaseUrl}
-        image={this.state.experiences.image}
-        mapSource={this.state.mapSource}
-        overview={this.state.experiences.overview}
-        details={this.state.experiences.quickview.details}
-       />
-    )
+        category={experiences.quickview.category}
+        subtitle={experiences.quickview.subtitle}
+        rating={experiences.rating}
+        reviewCount={experiences.reviewCount}
+        supplier={experiences.quickview.supplier}
+        cost={experiences.cost_unit.cost}
+        imageBaseUrl={imageBaseUrl}
+        image={experiences.image}
+        mapSource={mapSource}
+        overview={experiences.overview}
+        details={experiences.quickview.details}
+      />
+    );
   }
 }
 
+QuickView.propTypes = {
+  experiences: PropTypes.objectOf(PropTypes.object).isRequired,
+  imageBaseUrl: PropTypes.string.isRequired,
+};
 export default QuickView;

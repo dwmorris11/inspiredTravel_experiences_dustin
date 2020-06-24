@@ -7,7 +7,7 @@
     "test": "jest --coverage",
     "build": "webpack --watch",
     "start": "nodemon server",
-    "lint": "eslint ./ --ext .jsx",
+    "lint": "eslint ./ --ext .jsx --fix",
     "seed": "node database/dynamicseed.js"
   },
   "keywords": [],
@@ -96,6 +96,7 @@
     "lorem-ipsum": "2.0.3",
     "mongoose": "5.9.19",
     "morgan": "1.10.0",
+    "prop-types": "^15.7.2",
     "react": "16.13.1",
     "react-dom": "16.13.1"
   }
