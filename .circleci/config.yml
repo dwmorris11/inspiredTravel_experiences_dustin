@@ -13,7 +13,7 @@ jobs:
             - run: npm install
             - run: npx webpack
             - run: npm run lint
-            - run: npm start
+            - run: npm circleStart
             - run: npm run seed
             - run: npm test
 workflows:
