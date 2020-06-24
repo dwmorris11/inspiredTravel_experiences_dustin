@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import QuickViewHeader from './quickview_header.jsx'; // eslint-disable-line
-import QuickViewRating from './quickview_rating.jsx'; // eslint-disable-line
-import QuickViewPrice from './quickview_price.jsx'; // eslint-disable-line
-import QuickViewBody from './quickview_body.jsx'; // eslint-disable-line
+import QuickViewHeader from './quickview_header';
+import QuickViewRating from './quickview_rating';
+import QuickViewPrice from './quickview_price';
+import QuickViewBody from './quickview_body';
 
 const QuickViewContainer = (
   {

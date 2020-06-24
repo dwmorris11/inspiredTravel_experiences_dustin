@@ -8,6 +8,7 @@
     "build": "webpack --watch",
     "start": "nodemon server",
     "lint": "eslint ./ --ext .jsx --fix",
+    "linter": "eslint ./ --fix",
     "seed": "node database/dynamicseed.js"
   },
   "keywords": [],

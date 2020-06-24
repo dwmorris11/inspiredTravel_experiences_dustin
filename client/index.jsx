@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/app.jsx'; // eslint-disable-line
+import App from './components/app';
 import '../public/dist/css/font.css';
 import '../public/dist/css/general.css';
 import '../public/dist/css/toolbar.css';

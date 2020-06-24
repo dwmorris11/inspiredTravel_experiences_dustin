@@ -1,7 +1,7 @@
 import React from 'react';
 import _ from 'lodash';
 import PropTypes from 'prop-types';
-import QuickViewContainer from './quickview_container.jsx'; // eslint-disable-line
+import QuickViewContainer from './quickview_container';
 
 class QuickView extends React.Component {
   constructor(props) {

@@ -1,9 +1,9 @@
 import React from 'react';
 import axios from 'axios';
 import _ from 'lodash';
-import Parent from './parent_module.jsx'; // eslint-disable-line
-import Toolbar from './toolbar_module.jsx'; // eslint-disable-line
-import Quickview from './quickview/quickview_module.jsx'; // eslint-disable-line
+import Parent from './parent_module';
+import Toolbar from './toolbar_module';
+import Quickview from './quickview/quickview_module';
 
 class App extends React.Component {
   constructor(props) {
