@@ -12,7 +12,6 @@ jobs:
       - checkout
       - node/with-cache:
           steps:
-            - run: npm install
             - run: npx webpack
             - run: npm run lint
             - run: npm start
