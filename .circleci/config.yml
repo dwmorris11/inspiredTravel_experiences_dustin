@@ -19,10 +19,12 @@ jobs:
             - run: npm run circleStart
             - run:
                 name: Wait for server to start
-                command: dockerize --wait http://127.0.0.1:3636 -timeout 120s
+                command: dockerize --wait tcp://127.0.0.1:3636 -timeout 120s
                 when: always
             - run: npm run seed
+                when: always
             - run: npm run test
+                when: always
 workflows:
   build_and_test:
     jobs:
