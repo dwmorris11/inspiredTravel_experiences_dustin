@@ -10,7 +10,7 @@ class QuickView extends React.Component {
       // visible: props.visbility,
       experiences: props.experiences,
       imageBaseUrl: props.imageBaseUrl,
-      mapSource: '',
+      mapSource: props.mapSource,
     };
   }
 
@@ -38,10 +38,12 @@ class QuickView extends React.Component {
 }
 
 QuickView.defaultProps = {
+  mapSource: 'http',
+  imageBaseUrl: 'http',
   experiences: {
-    id: 3
-  }
-}
+    id: 3,
+  },
+};
 
 QuickView.propTypes = {
   mapSource: PropTypes.string,
@@ -56,7 +58,7 @@ QuickView.propTypes = {
     review_count: PropTypes.number.isRequired,
     cost_unit: PropTypes.shape({
       cost: PropTypes.number.isRequired,
-      unit: PropTypes.string.isRequired
+      unit: PropTypes.string.isRequired,
     }),
     link: PropTypes.string.isRequired,
     popularity: PropTypes.number.isRequired,
@@ -77,7 +79,7 @@ QuickView.propTypes = {
       supplier: PropTypes.string.isRequired,
       map_address: PropTypes.shape({
         lat: PropTypes.number.isRequired,
-        lng: PropTypes.number.isRequired
+        lng: PropTypes.number.isRequired,
       }),
     }),
   }),

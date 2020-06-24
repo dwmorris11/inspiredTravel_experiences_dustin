@@ -51,6 +51,6 @@ QuickViewContainer.propTypes = {
     instant_confirmation: PropTypes.bool,
     cancellations: PropTypes.bool,
   }).isRequired,
-  };
+};
 
 export default QuickViewContainer;
