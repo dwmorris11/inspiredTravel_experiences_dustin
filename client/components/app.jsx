@@ -16,7 +16,9 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('/005') // TODO
+    const url = new URL(window.location.href);
+    const id = url.pathname;
+    axios.get(`${id}`)
       .then((res) => {
         this.setState({
           experiences: res.data,

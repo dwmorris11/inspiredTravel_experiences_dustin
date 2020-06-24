@@ -7,8 +7,7 @@
     "test": "jest --coverage",
     "build": "webpack --watch",
     "start": "nodemon server",
-    "lint": "eslint ./ --ext .jsx --fix",
-    "linter": "eslint ./ --fix",
+    "lint": "eslint ./ --ext .jsx --ext .js --fix",
     "seed": "node database/dynamicseed.js"
   },
   "keywords": [],
@@ -26,7 +25,10 @@
       "!**/node_modules/**",
       "!**/webpack/**",
       "!**/lib/**",
-      "!**/public/**"
+      "!**/public/**",
+      "!**/config.js/**",
+      "!**/s3client.js/**",
+      "!**/webpack.config.js/**"
     ],
     "coverageDirectory": "coverage",
     "coveragePathIgnorePatterns": [
@@ -40,7 +42,8 @@
       "/bundle/",
       "/<root>/public/dist//",
       "/lib/",
-      "/react/"
+      "/react/",
+      "/database/"
     ],
     "coverageReporters": [
       "text"
@@ -84,6 +87,8 @@
     "jest-environment-enzyme": "^7.1.2",
     "jest-enzyme": "^7.1.2",
     "nodemon": "2.0.4",
+    "puppeteer": "^4.0.1",
+    "regenerator-runtime": "^0.13.5",
     "style-loader": "^1.2.1",
     "webpack": "4.43.0",
     "webpack-cli": "3.3.11"

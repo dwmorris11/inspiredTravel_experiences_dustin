@@ -29,7 +29,7 @@ const QuickViewContainer = (
       image={image}
       mapSource={mapSource}
       overview={overview}
-      detail={details}
+      details={details}
     />
   </div>
 );
@@ -44,7 +44,13 @@ QuickViewContainer.propTypes = {
   image: PropTypes.string.isRequired,
   mapSource: PropTypes.string.isRequired,
   overview: PropTypes.string.isRequired,
-  details: PropTypes.string.isRequired,
-};
+  details: PropTypes.shape({
+    languages: PropTypes.arrayOf(PropTypes.string),
+    tour_time: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.number, PropTypes.string])),
+    vouchers_allowed: PropTypes.arrayOf(PropTypes.bool),
+    instant_confirmation: PropTypes.bool,
+    cancellations: PropTypes.bool,
+  }).isRequired,
+  };
 
 export default QuickViewContainer;

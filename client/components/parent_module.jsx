@@ -13,6 +13,7 @@ const Parent = ({ experiences, imageBaseUrl }) => (
               image={imageBaseUrl + exp.image}
               description={exp.description}
               costUnit={exp.cost_unit}
+              key={exp.id + Math.random()}
             />
           ))}
         </div>
@@ -21,7 +22,7 @@ const Parent = ({ experiences, imageBaseUrl }) => (
   </div>
 );
 Parent.propTypes = {
-  experiences: PropTypes.arrayOf(PropTypes.array).isRequired,
+  experiences: PropTypes.arrayOf(PropTypes.object).isRequired,
   imageBaseUrl: PropTypes.string.isRequired,
 };
 export default Parent;

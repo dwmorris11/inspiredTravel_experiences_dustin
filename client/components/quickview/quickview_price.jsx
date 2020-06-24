@@ -14,7 +14,7 @@ const QuickViewPrice = ({ cost }) => (
         </span>
       </div>
       <span>
-        <button className="More Info" type="button">More Info</button>
+        <button className="More_Info" type="button">More Info</button>
       </span>
     </div>
   </div>

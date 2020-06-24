@@ -10,7 +10,7 @@ module.exports.data = {
 						"cost" : 112,
 						"unit" : "adult"
 		},
-		"link" : "",
+		"link" : "none",
 		"popularity" : 15813,
 		"quickview" : {
 						"details" : {
