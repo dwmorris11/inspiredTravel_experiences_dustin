@@ -21,9 +21,11 @@ jobs:
                 name: Wait for server to start
                 command: dockerize --wait tcp://127.0.0.1:3636 -timeout 120s
                 when: always
-            - run: npm run seed
+            - run:
+                command: npm run seed
                 when: always
-            - run: npm run test
+            - run:
+                command: npm run test
                 when: always
 workflows:
   build_and_test:
