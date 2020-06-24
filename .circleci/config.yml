@@ -24,9 +24,8 @@ jobs:
             - run: npm run seed
             - run: npm run test
 workflows:
-    build:
-      jobs:
-        - build
-    test:
-        - test
+  build_and_test:
+    jobs:
+      - build
+      - test
 
