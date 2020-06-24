@@ -3,28 +3,28 @@ import Toolbar from '../client/components/toolbar_module.jsx';
 import Experience from '../client/components/experience_module.jsx';
 import QuickView from '../client/components/quickview/quickview_module.jsx';
 import QuickViewBody from '../client/components/quickview/quickview_body.jsx';
+import QuickViewDetails from '../client/components/quickview/quickview_details.jsx';
 import { data } from '../__mocks__/dataMock.js';
 import App from '../client/components/app.jsx';
 
 describe('Toolbar Properties', () => {
   const wrapper = shallow(<Toolbar category={data.category} subtitle={data.subtitle} />);
-  it('Should display a category', ()=>{
+  it('Should display a category', () => {
     expect(wrapper.find('.Experience_Category').text()).toEqual(expect.anything());
   });
-  it('Should display a subtitle', ()=>{
+  it('Should display a subtitle', () => {
     expect(wrapper.find('.Experience_Category_Subtitle').text()).toEqual(expect.anything());
   });
 });
 
-describe('Experience Properties', ()=> {
+describe('Experience Properties', () => {
   const imageBaseUrl = 'https://images-trip.s3.us-east-2.amazonaws.com/';
   const wrapper = shallow(
     <Experience
-    cost={data.cost}
-    id={data.id}
-    image={imageBaseUrl + data.image}
-    description={data.description}
-    cost_unit={data.cost_unit}
+      id={data.id}
+      image={imageBaseUrl + data.image}
+      description={data.description}
+      costUnit={data.cost_unit}
     />);
   it('Should have an image', () => {
     const image = imageBaseUrl + data.image;
@@ -58,7 +58,7 @@ describe('Quickview Body Properties', () => {
      image={data.image}
      mapSource={mapSource}
      overview={data.quickview.overview}
-     detail={data.details}/>);
+     details={data.quickview.details}/>);
 
   it('Should have an image', () => {
     const imageUrl = imageBaseUrl + data.image;
@@ -73,8 +73,41 @@ describe('Quickview Body Properties', () => {
     expect(wrapper.containsMatchingElement(<span>{data.quickview.overview}</span>)).toBe(true);
   });
 
-  it('Should have an exit button', () => {
+  xit('Should have an exit button', () => {
     expect(wrapper.containsMatchingElement(<div class="QuickViewExitButton" role="button" tabindex="0"></div>)).toBe(true);
   });
+
+});
+
+describe('Quickview Details Properties', () => {
+  const wrapper = mount(
+     <QuickViewDetails details={data.quickview.details}/>
+   );
+
+  it('Should have the tour time', () => {
+    expect(wrapper.find('#time').text()).toEqual('1 hours');
+  });
+
+  it('Should have languages', () => {
+    expect(wrapper.find('#language').text()).toEqual('Languages Offered: in');
+  });
+
+  it('Should NOT have electronic vouchers', () => {
+    expect(wrapper.exists('#electronicVoucher')).toBe(false);
+  });
+
+  it('Should have paper vouchers', () => {
+    expect(wrapper.find('#paperVoucher').text()).toEqual('Paper Voucher Accepted');
+  });
+
+  it('Should NOT have instant confirmation', () => {
+    expect(wrapper.exists('#instantConfirmation')).toBe(false);
+  });
+
+  it('Should have cancellations', () => {
+    expect(wrapper.find('#cancellations').text()).toEqual('Free Cancellation up to 24 hours in advance');
+  });
+
+  // check for icons
 
 });

@@ -25,7 +25,8 @@ module.exports.data = {
 														false,
 														true
 										],
-										"instant_confirmation" : false
+										"instant_confirmation" : false,
+										"cancellations" : true
 						},
 						"category" : "id Lorem",
 						"subtitle" : "excepteur quis",
