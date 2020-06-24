@@ -8,6 +8,9 @@ jobs:
       - image: circleci/mongo:4.2.7
     steps:
       - checkout
+      - run:
+        name: Wait for server to start
+        command: dockerize --wait tcp://127.0.0.1:27017 -timeout 180s
       - node/with-cache:
           steps:
             - run: npm install
