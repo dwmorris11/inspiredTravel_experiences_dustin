@@ -17,7 +17,6 @@ jobs:
             - run: npx webpack
             - run: npm run lint
             - run: npm run circleStart
-                background: 'true'
                 no_output_timeout: 210s
             - run:
                 name: Wait for server to start
