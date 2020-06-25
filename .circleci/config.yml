@@ -2,17 +2,35 @@ version: 2.1
 orbs:
   node: circleci/node@1.1.6
 jobs:
-  build-and-test:
-    executor:
-      name: node/default
+  build:
+    docker:
+      - image: circleci/node:dubnium
+      - image: circleci/mongo:4.2.7
     steps:
       - checkout
+      - run:
+          name: Wait for Mongo to start
+          command: dockerize --wait tcp://127.0.0.1:27017 -timeout 180s
       - node/with-cache:
           steps:
-            - run: npm install
-            - run: npm test
-            - run: npx eslint ./
+            - run:
+                command: |
+                  npm install
+                  npx webpack
+                  npm run lint
+            - run:
+                command: npm run circleStart
+                background: true
+            - run:
+                name: Wait for server to start
+                command: dockerize --wait http://127.0.0.1:3636/ -timeout 120s
+            - run:
+                command: npm run seed
+            - run:
+                command: npm run test
 workflows:
-    build-and-test:
-      jobs:
-        - build-and-test
+  build_and_test:
+    jobs:
+      - build
+
+

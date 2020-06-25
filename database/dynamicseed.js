@@ -1,7 +1,7 @@
 const Seeder = require('lorem-ipsum').LoremIpsum;
 const { experienceModel } = require('./experiencesDB.js');
 const { destinationModel } = require('./destinationDB.js');
-const { db } = require('./index.js'); // eslint-disable-line
+const { db, dbC } = require('./index.js'); // eslint-disable-line
 
 const overviewSeed = new Seeder({
   sentencesPerParagraph: {
@@ -72,27 +72,18 @@ const generateExperienceEntry = function (index) { // eslint-disable-line
   return entry;
 };
 const insertSampleExperience = function (entry) { // eslint-disable-line
-  return experienceModel.create(entry)
-    .catch((error) => {
-      console.log('catch');
-      return error;
-    });
+  experienceModel.create(entry)
+    .catch((error) => console.log(error)); // eslint-disable-line
 };
 
 const insertDestination = function (entry) { // eslint-disable-line
-  return destinationModel.create(entry)
-    .catch((error) => {
-      console.log('catch');
-      return error;
-    });
+  destinationModel.create(entry)
+    .catch((error) => console.log(error)); // eslint-disable-line
 };
 
 const seed = (qty, insert, entryFunc) => {
-  for (let i = 0; i < qty; i += 1) {
-    insert(entryFunc(i))
-      .catch(() => {
-        console.log('error inserting #', i);
-      });
+  for (let i = 0; i < qty+1; i += 1) {
+    insert(entryFunc(i));
   }
 };
 
@@ -109,3 +100,9 @@ seed(100, insertDestination, (index) => {
     experiences,
   };
 });
+
+setTimeout(() => {
+  dbC.close()
+}, 3000);
+
+
