@@ -5,6 +5,7 @@ const axios = require('axios');
 const _ = require('lodash');
 const puppeteer = require('puppeteer');
 require("regenerator-runtime/runtime");
+require("../database/index.js");
 
 // get route should respond with an 5 element array of experience JSON objects
 // count
