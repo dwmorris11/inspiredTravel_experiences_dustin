@@ -7,7 +7,6 @@ class QuickView extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      // visible: props.visbility,
       experiences: props.experiences,
       imageBaseUrl: props.imageBaseUrl,
       mapSource: props.mapSource,

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Experience = ({
-  id, image, description, costUnit,
+  id, image, description, costUnit, quickViewClick
 }) => (
   <div className="Experience_Container Experience_Container2" id={id} key={`${id}ec`}>
     <div className="Experience Experience2">
@@ -36,7 +36,7 @@ const Experience = ({
       <div className="QuickView">
         <div className="QuickView_Button_Container">
           <div>
-            <button className="QuickView_Button" type="button">
+            <button className="QuickView_Button" type="button" onClick={quickViewClick}>
               <span className="QuickView_Eye">Quick View</span>
             </button>
           </div>
@@ -47,6 +47,7 @@ const Experience = ({
 );
 
 Experience.propTypes = {
+  quickViewClick: PropTypes.func.isRequired,
   id: PropTypes.number.isRequired,
   image: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,

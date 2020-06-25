@@ -13,7 +13,7 @@ const app = express();
 const port = 3636;
 
 app.use(morgan('dev'));
-app.use(express.static('/Users/dustinmorris/junior/trip/public/dist'));
+app.use('/:id', express.static('/Users/dustinmorris/junior/trip/public/dist'));
 
 const findExperiences = (destination) => (
   Promise.map(destination[0].experiences, (id) => (
@@ -23,9 +23,9 @@ const findExperiences = (destination) => (
   ))
 );
 
-app.get('/', (req, res) => {
-  res.status(200).send();
-});
+// app.get('/', (req, res) => {
+//   res.status(200).send();
+// });
 
 app.get('/:id', (req, res) => {
   const { id } = req.params;

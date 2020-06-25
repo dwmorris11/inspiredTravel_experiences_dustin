@@ -13,6 +13,13 @@ class App extends React.Component {
       imageBaseUrl: 'https://images-trip.s3.us-east-2.amazonaws.com/',
       quickViewVisibility: false,
     };
+    this.quickViewClick = this.quickViewClick.bind(this);
+  }
+
+  quickViewClick(e) {
+    this.setState({
+      quickViewVisibility: true
+    });
   }
 
   componentDidMount() {
@@ -35,12 +42,11 @@ class App extends React.Component {
     return (
       <div>
         <Toolbar category={experiences[0].category} subtitle={experiences[0].subtitle} />
-        <Parent experiences={experiences} imageBaseUrl={imageBaseUrl} />
-        <Quickview
-          experiences={experiences}
-          imageBaseUrl={imageBaseUrl}
-          visibility={quickViewVisibility}
-        />
+        <Parent experiences={experiences}
+                imageBaseUrl={imageBaseUrl}
+                quickViewClick={this.quickViewClick} />
+        {quickViewVisibility ? <Quickview experiences={experiences} imageBaseUrl={imageBaseUrl} />
+        : <div></div>}
       </div>
     );
   }

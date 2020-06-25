@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Experience from './experience_module';
 
-const Parent = ({ experiences, imageBaseUrl }) => (
+const Parent = ({ experiences, imageBaseUrl, quickViewClick }) => (
   <div className="Parent_Container">
     <div className="Data_Container">
       <div className="Outer_Data_Container">
@@ -14,6 +14,7 @@ const Parent = ({ experiences, imageBaseUrl }) => (
               description={exp.description}
               costUnit={exp.cost_unit}
               key={exp.id + Math.random()}
+              quickViewClick={quickViewClick}
             />
           ))}
         </div>
@@ -22,6 +23,7 @@ const Parent = ({ experiences, imageBaseUrl }) => (
   </div>
 );
 Parent.propTypes = {
+  quickViewClick: PropTypes.func.isRequired,
   experiences: PropTypes.arrayOf(PropTypes.object).isRequired,
   imageBaseUrl: PropTypes.string.isRequired,
 };
