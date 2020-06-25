@@ -11,7 +11,7 @@ jobs:
       - run:
           name: Wait for Mongo to start
           command: dockerize --wait tcp://127.0.0.1:27017 -timeout 180s
-      - node/with-cache:
+      - node:
           steps:
             - run:
                 command: |
