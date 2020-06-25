@@ -10,9 +10,9 @@ jobs:
       - checkout
       - save_cache:
           key:
-            - v2
+            - v2-repo-{{ .Environment.CIRCLE_SHA1 }}
           paths:
-            - ~/circlci
+            - ~/circleci
       - run:
           name: Wait for Mongo to start
           command: dockerize --wait tcp://127.0.0.1:27017 -timeout 180s
