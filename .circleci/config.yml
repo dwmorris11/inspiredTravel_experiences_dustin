@@ -8,7 +8,9 @@ jobs:
       - image: circleci/mongo:4.2.7
     steps:
       - checkout
-    ## Use clear.txt in cache key
+      - restore_cache:
+        keys:
+          - v1
       - run:
           name: Wait for Mongo to start
           command: dockerize --wait tcp://127.0.0.1:27017 -timeout 180s
