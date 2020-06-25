@@ -11,7 +11,7 @@ jobs:
       - save_cache:
           key:
             - v2
-          path:
+          paths:
             - ~/circlci
       - run:
           name: Wait for Mongo to start
