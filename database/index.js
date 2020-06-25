@@ -11,3 +11,4 @@ dbC.on('error', console.error.bind(console, 'connection error: ')); // eslint-di
 dbC.once('open', () => console.log('connected')); // eslint-disable-line
 
 module.exports.db = db;
+module.exports.dbC = dbC;
