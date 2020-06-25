@@ -10,7 +10,7 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - v1
+            - v2
       - run:
           name: Wait for Mongo to start
           command: dockerize --wait tcp://127.0.0.1:27017 -timeout 180s
