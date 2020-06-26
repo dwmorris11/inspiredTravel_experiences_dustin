@@ -44,7 +44,7 @@ img, .Photo {
   border: 0;
 }
 
-.QuickView {
+.QVButton {
   position:absolute;
   height:50px;
   line-height:50px;
@@ -61,7 +61,7 @@ img, .Photo {
   transition:opacity .2s,background-color .2s
 }
 
-.Experience:hover .QuickView {
+.Experience:hover .QVButton {
     visibility:visible;
     opacity: 1;
 }

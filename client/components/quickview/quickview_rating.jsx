@@ -1,11 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const QuickViewRating = ({ rating, reviewCount, supplier }) => (
-  <div className="QuickViewColumn">
+const QuickViewRating = ({ rating, reviewCount, supplier }) => (  // eslint-disable-line
+  <div>
     <div className="QuickViewRating">
-      <span className="QuickViewBubbleRating">{rating}</span>
-      <span className="QuickViewReviewCount">{reviewCount}</span>
+      <span className="QuickViewBubbleRating" />
+      <span className="QuickViewReviewCount">
+        {reviewCount}
+        {' '}
+        reviews
+      </span>
     </div>
     <div className="QuickViewSupplier">
       By:

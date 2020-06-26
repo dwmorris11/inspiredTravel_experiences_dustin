@@ -57,7 +57,7 @@ describe('GET ROUTE `/id` where id does not exist', () => {
   // });
 });
 
-describe('Check functionality using Pupeteer', () => {
+describe('Check functionality using Puppeteer', () => {
   (async () => {
     const browser = await puppeteer.launch();
     const page = await browser.newPage();

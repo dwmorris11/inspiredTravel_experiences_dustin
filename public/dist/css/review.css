@@ -60,9 +60,26 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-
-.Review_Count {
+.ReviewCount {
   margin: 0 4px;
   font-size: 14px;
   line-height: 18px;
+  color: grey;
+}
+
+.SeeMore {
+  text-align: center;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 18px;
+  color: #000a12;
+  color: gray;
+  cursor: pointer;
+  width: 100%;
+}
+
+.SeeMore::after {
+  text-decoration: none;
+  content: '\ea49';
+  font-family: icomoon!important;
 }

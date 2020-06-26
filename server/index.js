@@ -27,7 +27,7 @@ const findExperiences = (destination) => (
 //   res.status(200).send();
 // });
 
-app.get('/:id', (req, res) => {
+app.get('/:id/api/experiences', (req, res) => {
   const { id } = req.params;
   const numId = Number(id);
   if (numId < 1 || numId > 100) {

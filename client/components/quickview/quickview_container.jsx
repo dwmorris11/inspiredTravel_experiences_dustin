@@ -18,22 +18,51 @@ const QuickViewContainer = (
     mapSource,
     overview,
     details,
+    quickViewClose,
   },
 ) => (
-  <div>
-    <QuickViewHeader category={category} subtitle={subtitle} />
-    <QuickViewRating rating={rating} reviewCount={reviewCount} supplier={supplier} />
-    <QuickViewPrice cost={cost} />
-    <QuickViewBody
-      imageBaseUrl={imageBaseUrl}
-      image={image}
-      mapSource={mapSource}
-      overview={overview}
-      details={details}
-    />
+  <div className="QuickView">
+    <div className="QuickViewWhiteBox">
+      <div className="QuickViewOverlay">
+        <div className="QuickViewBox">
+          <div className="QuickViewHeaderContainer">
+            <div className="ui_multi">
+              <div className="HeaderRow">
+                <div className="ui_row">
+                  <div>
+                    <QuickViewHeader category={category} subtitle={subtitle} />
+                  </div>
+                </div>
+                <div className="ui_row">
+                  <div className="ui_rating">
+                    <QuickViewRating
+                      rating={rating}
+                      reviewCount={reviewCount}
+                      supplier={supplier}
+                    />
+                  </div>
+                  <div className="ui_price">
+                    <QuickViewPrice cost={cost} />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <QuickViewBody
+            imageBaseUrl={imageBaseUrl}
+            image={image}
+            mapSource={mapSource}
+            overview={overview}
+            details={details}
+            quickViewClose={quickViewClose}
+          />
+        </div>
+      </div>
+    </div>
   </div>
 );
 QuickViewContainer.propTypes = {
+  quickViewClose: PropTypes.func.isRequired,
   category: PropTypes.string.isRequired,
   subtitle: PropTypes.string.isRequired,
   rating: PropTypes.number.isRequired,
@@ -42,7 +71,7 @@ QuickViewContainer.propTypes = {
   cost: PropTypes.number.isRequired,
   imageBaseUrl: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
-  mapSource: PropTypes.string.isRequired,
+  mapSource: PropTypes.objectOf(PropTypes.number).isRequired,
   overview: PropTypes.string.isRequired,
   details: PropTypes.shape({
     languages: PropTypes.arrayOf(PropTypes.string),

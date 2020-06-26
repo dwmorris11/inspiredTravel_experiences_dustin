@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const QuickViewHeader = ({ category, subtitle }) => (
-  <div className="QuickViewColumn">
-    <div className="QuickViewCategory">
+  <div>
+    <div className="ui_header.h4">
       <span>{category}</span>
     </div>
     <div className="QuickViewSubtitle">

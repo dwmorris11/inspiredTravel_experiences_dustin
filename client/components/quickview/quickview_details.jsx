@@ -10,7 +10,7 @@ const QuickViewDetails = ({ details }) => {
     detailArray.push(obj);
   });
   return (
-    <div className="QuickViewDetailsIcons">
+    <div className="QuickViewDetailsContainer">
       <div className="QuickViewDetailsIconsRows">
         {_.map(detailArray, (detail) => (
           <QuickViewDetailsRow detail={detail} key={detail + Math.random()} />
@@ -63,9 +63,10 @@ const QuickViewDetailsRow = ({ detail }) => {
     display = `${detail.tour_time.time} ${detail.tour_time.unit}`;
     id = 'time';
   }
+
   return (
     <div className="QuickViewDetailIcon">
-      <span className="DetailIcon" />
+      <span className="DetailIcon" id={`${id}i`} />
       <div className="Detail" id={id}>
         {display}
       </div>
