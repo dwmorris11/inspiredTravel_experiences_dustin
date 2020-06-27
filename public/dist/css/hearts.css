@@ -1,0 +1,109 @@
+.OuterHeartContainer {
+  padding: 6px 8px 0 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  font-family: icomoon!important;
+}
+
+.InnerHeartContainer {
+  display: flex;
+  position: relative;
+  align-items: center;
+  cursor: pointer;
+}
+
+.CircleHeart {
+  display: flex;
+  line-height: 0;
+  font-size: 20px;
+  width: 20px;
+  height: 20px;
+}
+
+.CircleEmpty {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  color: white;
+  transition: opacity .25s ease-in-out;
+}
+
+.CircleEmpty::before {
+  display: block;
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 65%;
+  height: 65%;
+  border-radius: 100%;
+  content: "";
+  background-color: rgba(0,0,0,.1);
+}
+
+.HeartEmpty {
+  color: white;
+  visibility: visible;
+}
+
+.HeartEmpty::before {
+  font-family: icomoon!important;
+  font-size: inherit;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 1;
+  content: '\ea4a';
+  visibility: visible;
+}
+
+.CircleFull {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  color: white;
+  transition: opacity .25s ease-in-out;
+  visibility: hidden;
+}
+
+.CircleFull::before {
+  display: block;
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 65%;
+  height: 65%;
+  border-radius: 100%;
+  content: "";
+
+}
+
+.HeartFull {
+  color: red;
+}
+
+.HeartFull::before {
+  font-family: icomoon!important;
+  font-size: inherit;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 1;
+  content: "\ea4b";
+}
+
+.CircleHeart:hover +
+.HeartFull  +
+.CircleFull +
+.HeartFull::before +
+.CircleFull::before {
+  visibility: visible;
+}
+

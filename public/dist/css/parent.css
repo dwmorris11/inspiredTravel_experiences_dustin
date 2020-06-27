@@ -26,3 +26,15 @@
   padding-top: 1px;
   background-color: white;
 }
+
+.OverflowOuter {
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height .2s ease-out;
+}
+
+.InnerOverflowContainer {
+  margin-top: 16px;
+  padding-top: 8px;
+  margin: auto;
+}

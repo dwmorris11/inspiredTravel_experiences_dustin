@@ -1,0 +1,313 @@
+
+.QuickView {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  bottom: auto;
+  right: auto;
+  display: block;
+  transform: translate(-50%,-50%);
+  z-index: 10104;
+  box-shadow: 0 0 8px 0 rgba(0,0,0,.35);
+}
+
+.QuickViewExitButton {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  text-align: center;
+  transition: opacity .2s;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+}
+
+.QuickViewExitButton::before {
+  content: "\00d7";
+  font-size: 32px;
+  line-height: 48px;
+}
+
+.QuickViewWhiteBox {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  height: 100%;
+  max-height: 90vh;
+  background-color: white;
+}
+
+.QuickViewOverlay {
+    flex: 1;
+    flex-basis: auto;
+    max-width: 100vw;
+    height: 100%;
+    font-size: 12px;
+    line-height: 16px;
+    overflow-x: hidden;
+    overflow-y: overlay;
+    padding: 48px;
+}
+
+.QuickViewBox {
+  width: 800px;
+  display: block;
+}
+
+.QuickViewHeaderContainer {
+  padding-bottom: 25px;
+  display: block;
+}
+
+.QuickViewBodyContainer {
+  border: solid #e0e0e0;
+  border-width: 1px 0 0;
+  padding-top: 25px;
+  display: block;
+}
+
+.Price {
+  display: flex;
+}
+
+.ui_columns {
+  display: flex;
+  margin-left: -12px;
+  margin-right: -12px;
+  box-sizing: border-box;
+}
+
+.ui_multi {
+  display: flex;
+}
+
+.ui_row {
+  padding-top: 0;
+  padding-bottom: 0;
+  width: 100%;
+  display: flex;
+  padding: 12px;
+  box-sizing: border-box;
+}
+
+.HeaderRow {
+  width: 100%;
+}
+
+.ui_rating {
+  flex: 2;
+  width: 80%;
+}
+.ui_price {
+  flex: 1;
+  width: 20%;
+}
+
+.QuickViewSubtitle {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+  color: #000;
+}
+
+.QuickViewRating {
+  margin-bottom: 4px;
+  color: #8c8c8c;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+  vertical-align: top;
+  width: 100%;
+  padding-top: 2px;
+}
+
+.QuickViewBubbleRating {
+  vertical-align: middle;
+  margin-left: 1px;
+  padding-bottom: 1px;
+  display: inline-block;
+  position: relative;
+  color: #8c8c8c;
+  white-space: nowrap;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.QuickViewBubbleRating::before {
+  content: "\ea55\ea55\ea55\ea55\ea56";
+  color: #fff;
+  display: block;
+  font-style: normal;
+  font-weight: 400;
+  font-variant: normal;
+  font-size: inherit;
+  line-height: 1;
+  font-family: icomoon!important;
+}
+
+.QuickViewBubbleRating::after {
+  content: "\ea55\ea55\ea55\ea55\ea56";
+  color: green;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  font-style: normal;
+  font-weight: 400;
+  font-variant: normal;
+  font-size: inherit;
+  line-height: 1;
+  font-family: icomoon!important;
+}
+
+.QuickViewReviewCount {
+  font-size: 12px;
+  line-height: 16px;
+  margin: 0 4px;
+  color: #4a4a4a;
+}
+
+.QuickViewSupplier {
+  display: block;
+}
+
+.SupplierName {
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 700;
+}
+
+.QuickViewHeaderPriceRow {
+  display: inline-flex;
+  float: right;
+  margin: 0;
+  padding: 0;
+}
+
+.QuickViewHeaderPrice {
+  line-height: 20px;
+  padding-right: 10px;
+  text-align: right;
+}
+
+.Price {
+  line-height: 20px;
+  padding-right: 10px;
+  text-align: right;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+  color: #000;
+}
+
+.Quick_More_Info {
+  border-radius: 12px;
+  border-color: #f2b203;
+  background-color: #f2b203;
+  color: #000;
+  padding: 10px 22px;
+  font-size: 16px;
+  line-height: 20px;
+  position: relative;
+  display: inline-block;
+  font-weight: 700;
+  font-family: inherit;
+  border: 1px solid transparent;
+  background-clip: padding-box;
+  box-sizing: border-box;
+  line-height: 18px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color .2s;
+}
+
+.ui_header {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000;
+  padding-left: 25px;
+}
+
+.QuickViewBodyOverview {
+  color: #4a4a4a;
+  font-size: 14px;
+  line-height: 18px;
+  display: block;
+  padding-left: 25px;
+}
+
+.QuickViewImage {
+  width: 380px;
+  padding-bottom: 20px;
+  border: 0;
+}
+
+.QuickViewDetailsContainer {
+  padding-top: 15px;
+  padding-right: 25px;
+  display: flex;
+  flex-direction: column;
+}
+
+.QuickViewDetailsIconsRows {
+  display: flow-root;
+  padding: 5px 25px;
+  align-items: center;
+}
+
+.QuickViewDetailIcon {
+  color: #00a680;
+  font-size: 20px;
+  line-height: 24px;
+  padding-right: 10px;
+  display: flex;
+  font-family: icomoon!important;
+}
+
+#cancellationsi::before {
+  content: "\ea50";
+}
+
+#languagei::before {
+  content: "\ea53";
+}
+
+#electronicVoucheri::before {
+  content: "\ea51";
+}
+
+#paperVoucheri::before {
+  content: "\ea51";
+}
+
+#instantConfirmationi::before {
+  content: "\ea54";
+}
+
+#timei::before {
+  content: "\ea52";
+}
+
+.Detail {
+  color: #4a4a4a;
+  font-size: 14px;
+  line-height: 18px;
+  padding-left: 10px;
+  padding-top: 3px;
+}
+
+.QuickViewReviewCount {
+  margin: 0 4px;
+  font-size: 14px;
+  line-height: 18px;
+  color: gray;
+}
+.Map {
+  height: 400px;
+  width: 100%;
+  padding-top: 20px;
+}

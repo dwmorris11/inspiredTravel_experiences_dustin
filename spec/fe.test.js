@@ -1,3 +1,6 @@
+const puppeteer = require('puppeteer');
+require("regenerator-runtime/runtime");
+import Promise from 'bluebird';
 import React from 'react';
 import Toolbar from '../client/components/toolbar_module';
 import Experience from '../client/components/experience_module';
@@ -10,6 +13,7 @@ import QuickViewContainer from '../client/components/quickview/quickview_contain
 import Parent from '../client/components/parent_module';
 import { data } from '../__mocks__/dataMock';
 import App from '../client/components/app';
+import Map from '../client/components/quickview/quickview_map';
 
 describe('Toolbar Properties', () => {
   const wrapper = shallow(<Toolbar category={data.category} subtitle={data.subtitle} />);
@@ -29,6 +33,11 @@ describe('Experience Properties', () => {
       image={imageBaseUrl + data.image}
       description={data.description}
       costUnit={data.cost_unit}
+      key={data.id + Math.random()}
+      quickViewClick={() => {}}
+      arrayposition={0}
+      reviewCount={data.review_count}
+      rating={data.rating}
     />);
   it('Should have an image', () => {
     const image = imageBaseUrl + data.image;
@@ -55,22 +64,19 @@ describe('Experience Properties', () => {
 
 describe('Quickview Body Properties', () => {
   const imageBaseUrl = 'https://images-trip.s3.us-east-2.amazonaws.com/';
-  const mapSource ='klksdjf'; // TODO
   const wrapper = shallow(
     <QuickViewBody
      imageBaseUrl={imageBaseUrl}
      image={data.image}
-     mapSource={mapSource}
+     mapSource={data.quickview.map_address}
      overview={data.quickview.overview}
-     details={data.quickview.details}/>);
+     details={data.quickview.details}
+     quickViewClose={()=>{}}/>
+  );
 
   it('Should have an image', () => {
     const imageUrl = imageBaseUrl + data.image;
     expect(wrapper.containsMatchingElement(<img src={imageUrl}/>)).toBe(true);
-  });
-
-  it('Should have a map', () => {
-    expect(wrapper.containsMatchingElement(<img src={mapSource}/>)).toBe(true);
   });
 
   it('Should have an overview', () => {
@@ -116,13 +122,23 @@ describe('Quickview Details Properties', () => {
 
 });
 
+describe('QuickView Map Properties', ()=>{
+  const wrapper = shallow(
+    <Map mapSource={data.quickview.map_address} />
+  );
+
+  it('Should have a map', () => {
+    expect(wrapper.containsMatchingElement(<img alt="map"/>)).toBe(true);
+  })
+});
+
 describe('Quickview Header Properties', () => {
   const wrapper = shallow(
      <QuickViewHeader category={data.quickview.category} subtitle={data.quickview.subtitle}/>
    );
 
   it('Should have a category', () => {
-    expect(wrapper.find('.QuickViewCategory').text()).toEqual(data.quickview.category);
+    expect(wrapper.find('span').text()).toEqual(data.quickview.category);
   });
 
   it('Should have a subtitle', () => {
@@ -137,18 +153,18 @@ describe('QuickView Price Properties', () => {
   );
 
   it('Should have a cost', () => {
-    expect(wrapper.find('.Price').text()).toEqual(data.cost_unit.cost.toString());
+    expect(wrapper.find('.Price').text()).toEqual(('$' + data.cost_unit.cost.toString()));
   });
 
   it('Should have style div tags', () => {
     expect(wrapper.exists('.QuickViewHeaderPriceRow')).toBe(true);
     expect(wrapper.exists('.QuickViewHeaderPrice')).toBe(true);
-    expect(wrapper.exists('.ui_column')).toBe(true);
+    expect(wrapper.exists('.Price')).toBe(true);
   });
 
   it('Should have a more info button', ()=> {
     expect(wrapper.exists('button')).toBe(true);
-    expect(wrapper.find('.More_Info').text()).toEqual('More Info');
+    expect(wrapper.find('.Quick_More_Info').text()).toEqual('More Info');
   });
 
 });
@@ -156,19 +172,25 @@ describe('QuickView Price Properties', () => {
 describe('QuickView Module Properties', () => {
   const imageBaseUrl = 'https://images-trip.s3.us-east-2.amazonaws.com/';
   const wrapper = mount(
-    <QuickView experiences={data} imageBaseUrl={imageBaseUrl} />
+    <QuickView experience={data}
+    imageBaseUrl={imageBaseUrl}
+    quickViewClose={()=>{}}
+    />
   );
 
   it('Should contain a QuickViewContainer', () => {
     //expect(wrapper.find(QuickViewContainer).to.have.lengthOf(1)).toBe(true);
     expect(wrapper.props().imageBaseUrl).toEqual(imageBaseUrl);
-    expect(wrapper.props().experiences).toEqual(data);
+    expect(wrapper.props().experience).toEqual(data);
   });
 });
 
 describe('Parent Module', () => {
   const wrapper = mount(
-    <Parent experiences={[data, data]} imageBaseUrl = 'https://images-trip.s3.us-east-2.amazonaws.com/' />
+    <Parent experiences={[data, data]} imageBaseUrl = 'https://images-trip.s3.us-east-2.amazonaws.com/'
+      seeMoreClick={()=>{}}
+      quickViewClick={()=>{}}
+    />
   );
 
   it('Should contain styling divsions', () => {
@@ -186,4 +208,74 @@ describe('Parent Module', () => {
 
 });
 
+describe('Interactivity', () => {
+  let browser;
+  let page;
+  beforeAll(async () => {
+    try{
+      browser = await puppeteer.launch();
+      page = await browser.newPage();
+      await page.goto('http://localhost:3636/007');
+    } catch (e) {
+      console.log(e);
+      return e;
+    }
+  });
 
+  //afterAll(() => browser.close());
+
+  it('should not have a QuickView open', (done) => {
+    (async function () {
+    try {
+      await page.waitFor(1500);
+      await page.waitForSelector('#a1');
+      await page.focus('#a1');
+      await page.waitForSelector('#b1');
+      await page.focus('#b1');
+      const quickView = await page.$('.QuickView');
+      expect(quickView).not.toEqual('QuickView');
+      expect(quickView).toEqual(null);
+      done();
+    } catch (error) {
+      done(error);
+    }
+  })();
+  });
+
+  it('should have a QuickView open', (done) => {
+    (async function () {
+    try {
+      await page.waitForSelector('#a1');
+      await page.focus('#a1');
+      await page.waitForSelector('#b1');
+      await page.focus('#b1');
+      await page.click('#b1');
+      const quickView = await page.$eval('.QuickView', node => node.className);
+      expect(quickView).toEqual('QuickView');
+      done();
+    } catch (error) {
+      done(error);
+    }
+  })();
+  });
+
+  // it('should have a QuickView close', (done) => {
+  //   (async function () {
+  //     let content;
+  //   try {
+  //     content = await page.content();
+  //     console.log(content);
+  //     await page.waitForSelector('#exit');
+  //     await page.on('load', page.screenshot({path: 'quickview.png'}));
+  //     await page.click('#exit');
+  //     const quickView = await page.$('.QuickView');
+  //     expect(quickView).not.toEqual('QuickView');
+  //     expect(quickView).toEqual(null);
+  //     done();
+  //   } catch (error) {
+  //     done(error);
+  //   }
+  // })();
+  // });
+
+});

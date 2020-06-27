@@ -1,7 +1,7 @@
 const Seeder = require('lorem-ipsum').LoremIpsum;
 const { experienceModel } = require('./experiencesDB.js');
 const { destinationModel } = require('./destinationDB.js');
-const { db, dbC } = require('./index.js'); // eslint-disable-line
+const { db, dbConnection } = require('./index.js'); // eslint-disable-line
 
 const overviewSeed = new Seeder({
   sentencesPerParagraph: {
@@ -82,7 +82,7 @@ const insertDestination = function (entry) { // eslint-disable-line
 };
 
 const seed = (qty, insert, entryFunc) => {
-  for (let i = 0; i < qty+1; i += 1) {
+  for (let i = 0; i < qty + 1; i += 1) {
     insert(entryFunc(i));
   }
 };
@@ -102,7 +102,5 @@ seed(100, insertDestination, (index) => {
 });
 
 setTimeout(() => {
-  dbC.close()
+  dbConnection.close();
 }, 3000);
-
-

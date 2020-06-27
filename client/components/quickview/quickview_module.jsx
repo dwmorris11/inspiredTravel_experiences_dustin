@@ -7,48 +7,50 @@ class QuickView extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      // visible: props.visbility,
-      experiences: props.experiences,
+      experience: props.experience,
       imageBaseUrl: props.imageBaseUrl,
-      mapSource: props.mapSource,
+      mapSource: props.experience.quickview.map_address,
+      quickViewClose: props.quickViewClose,
     };
   }
 
   render() {
-    const { experiences, imageBaseUrl, mapSource } = this.state;
-    if (_.isEmpty(experiences) || experiences.quickview === undefined) {
+    const {
+      experience, imageBaseUrl, mapSource, quickViewClose,
+    } = this.state;
+    if (_.isEmpty(experience) || experience.quickview === undefined) {
       return ('');
     }
     return (
       <QuickViewContainer
-        category={experiences.quickview.category}
-        subtitle={experiences.quickview.subtitle}
-        rating={experiences.rating}
-        reviewCount={experiences.review_count}
-        supplier={experiences.quickview.supplier}
-        cost={experiences.cost_unit.cost}
+        category={experience.quickview.category}
+        subtitle={experience.quickview.subtitle}
+        rating={experience.rating}
+        reviewCount={experience.review_count}
+        supplier={experience.quickview.supplier}
+        cost={experience.cost_unit.cost}
         imageBaseUrl={imageBaseUrl}
-        image={experiences.image}
+        image={experience.image}
         mapSource={mapSource}
-        overview={experiences.quickview.overview}
-        details={experiences.quickview.details}
+        overview={experience.quickview.overview}
+        details={experience.quickview.details}
+        quickViewClose={quickViewClose}
       />
     );
   }
 }
 
 QuickView.defaultProps = {
-  mapSource: 'http',
   imageBaseUrl: 'http',
-  experiences: {
+  experience: {
     id: 3,
   },
 };
 
 QuickView.propTypes = {
-  mapSource: PropTypes.string,
+  quickViewClose: PropTypes.func.isRequired,
   imageBaseUrl: PropTypes.string,
-  experiences: PropTypes.shape({
+  experience: PropTypes.shape({
     id: PropTypes.number,
     category: PropTypes.string.isRequired,
     subtitle: PropTypes.string.isRequired,
