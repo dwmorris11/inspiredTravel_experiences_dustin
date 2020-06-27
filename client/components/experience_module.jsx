@@ -1,22 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Circles from './circles';
+import Heart from './heart';
 
 const Experience = ({
-  id, image, description, costUnit, quickViewClick, arrayposition, reviewCount,
+  id, image, description, costUnit, quickViewClick, arrayposition, reviewCount, rating,
 }) => (
   <div className="Experience_Container Experience_Container2" key={`${id}ec`}>
     <div className="Experience Experience2">
+      <Heart />
       <div className="Photo">
         <img src={image} alt="" />
       </div>
       <div className="Description_Container">
-        <div className="Description">
-          <span id="Description_Text">{description}</span>
+        <div className="Description" id={`a${arrayposition.toString()}`}>
+          <span className="Description_Text">{description}</span>
           <span className="Review" />
         </div>
       </div>
       <div className="Review_Container">
-        <span className="Review_Circles" />
+        <Circles rating={rating} />
+
         <span className="ReviewCount">
           {reviewCount}
           {' '}
@@ -39,6 +43,7 @@ const Experience = ({
         </div>
       </div>
       <div
+        id={`b${arrayposition.toString()}`}
         className="QVButton"
         role="button"
         onClick={() => quickViewClick(arrayposition)}
@@ -56,6 +61,7 @@ const Experience = ({
 );
 
 Experience.propTypes = {
+  rating: PropTypes.number.isRequired,
   reviewCount: PropTypes.number.isRequired,
   arrayposition: PropTypes.number.isRequired,
   quickViewClick: PropTypes.func.isRequired,

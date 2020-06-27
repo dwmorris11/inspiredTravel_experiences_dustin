@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Circles from '../circles';
 
 const QuickViewRating = ({ rating, reviewCount, supplier }) => (  // eslint-disable-line
   <div>
     <div className="QuickViewRating">
-      <span className="QuickViewBubbleRating" />
+      <Circles rating={rating} />
       <span className="QuickViewReviewCount">
         {reviewCount}
         {' '}

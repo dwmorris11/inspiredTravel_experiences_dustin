@@ -27,6 +27,7 @@ const Parent = ({
                   quickViewClick={quickViewClick}
                   arrayposition={arrayposition}
                   reviewCount={exp.review_count}
+                  rating={exp.rating}
                 />
               );
             })}
@@ -47,8 +48,9 @@ const Parent = ({
                       costUnit={exp.cost_unit}
                       key={exp.id + Math.random()}
                       quickViewClick={quickViewClick}
-                      arrayposition={arrayposition}
+                      arrayposition={position}
                       reviewCount={exp.review_count}
+                      rating={exp.rating}
                     />
                   );
                 })}

@@ -22,7 +22,7 @@
     "clearMocks": true,
     "collectCoverage": true,
     "collectCoverageFrom": [
-      "**/*.{js,jsx}",
+      "**/*.{js,jsx}/**",
       "!**/node_modules/**",
       "!**/webpack/**",
       "!**/lib/**",
@@ -31,7 +31,7 @@
       "!**/s3client.js/**",
       "!**/webpack.config.js/**"
     ],
-    "coverageDirectory": "coverage",
+    "coverageDirectory": "spec",
     "coveragePathIgnorePatterns": [
       "<root>/node_modules/",
       "/__mocks__/",
@@ -47,7 +47,8 @@
       "/database/"
     ],
     "coverageReporters": [
-      "text"
+      "text",
+      "json"
     ],
     "transform": {
       "^.+\\.jsx?$": "babel-jest"
@@ -66,7 +67,8 @@
     "testEnvironment": "enzyme",
     "testEnvironmentOptions": {
       "enzymeAdapter": "react16"
-    }
+    },
+    "preset": "jest-puppeteer"
   },
   "devDependencies": {
     "@babel/core": "^7.10.3",
@@ -88,6 +90,7 @@
     "jest": "^26.0.1",
     "jest-environment-enzyme": "^7.1.2",
     "jest-enzyme": "^7.1.2",
+    "jest-puppeteer": "^4.4.0",
     "nodemon": "2.0.4",
     "puppeteer": "^4.0.1",
     "regenerator-runtime": "^0.13.5",

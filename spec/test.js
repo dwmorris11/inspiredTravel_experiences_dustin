@@ -12,10 +12,10 @@ require("../database/index.js");
 // make sure they are objects
 // make sure they all have unique ids
 
-describe('GET ROUTE `/:id`', () => {
+describe('GET ROUTE `/:id/api/experiences`', () => {
   var response;
   beforeAll(() => {
-    return axios.get('http://localhost:3636/005')
+    return axios.get('http://localhost:3636/005/api/experiences')
     .then((res) => {
       response = res.data;
     })
@@ -56,20 +56,3 @@ describe('GET ROUTE `/id` where id does not exist', () => {
   //   expect(response).toEqual(expect.stringMatching(/\b\[Error/));
   // });
 });
-
-describe('Check functionality using Puppeteer', () => {
-  (async () => {
-    const browser = await puppeteer.launch();
-    const page = await browser.newPage();
-    try {
-      await page.goto('http://localhost:3636/006');
-      expect(page.on('requestfailed', () => true)).not.toBe(true);
-      expect(page.on('requestfinished', () => true)).toBe(true);
-      await browser.close();
-    } catch (e) {
-      if (e instanceof puppeteer.errors.TimeoutError) {
-        console.log('Pupeteer did not open the page.');
-      }
-    }
-  })();
-})

@@ -31,6 +31,7 @@ const QuickViewBody = ({
       onClick={quickViewClose}
       onKeyDown={quickViewClose}
       aria-label="Exit"
+      id="exit"
     />
   </div>
 );

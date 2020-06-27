@@ -26,10 +26,12 @@
   display: inline-block;
   position: relative;
   margin-left: 1px;
+  font-family: icomoon!important;
+  color: #00aa6c;
 }
 
 .Review_Circles::before {
-  content: '\ea56\ea56\ea56\ea56\ea56';
+  font-family: icomoon!important;
   color: #fff;
   display: block;
   font-style: normal;
@@ -37,15 +39,14 @@
   font-variant: normal;
   font-size: inherit;
   line-height: 1;
-  font-family: icomoon!important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #fff;
 }
 
 .Review_Circles::after {
+  font-family: icomoon!important;
   color: #00aa6c;
-  content: "\ea55\ea55\ea55\ea55\ea56";
   position: absolute;
     top: 0;
     left: 0;
@@ -56,10 +57,63 @@
     font-variant: normal;
     font-size: inherit;
     line-height: 1;
-    font-family: icomoon!important;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+/* .Review_Circles0::before {
+  font-family: icomoon!important;
+  content: attr(rating);
+}
+
+.Review_Circles0::after {
+  font-family: icomoon!important;
+  content: attr(rating);
+} */
+
+.Review_Circles1::before {
+  font-family: icomoon!important;
+  content: attr(rating);
+}
+
+.Review_Circles1::after {
+  font-family: icomoon!important;
+  content: attr(rating);
+}
+
+.Review_Circles2::before {
+  font-family: icomoon!important;
+  content: attr(rating);
+}
+
+.Review_Circles2::after {
+  font-family: icomoon!important;
+  content: attr(rating);
+}
+
+
+
+.Review_Circles3::before {
+  font-family: icomoon!important;
+  content: attr(rating);
+}
+
+.Review_Circles3::after {
+  font-family: icomoon!important;
+  content: attr(rating);
+}
+
+
+
+.Review_Circles4::before {
+  font-family: icomoon!important;
+  content: attr(rating);
+}
+
+.Review_Circles4::after {
+  font-family: icomoon!important;
+  content: attr(rating);
+}
+
 .ReviewCount {
   margin: 0 4px;
   font-size: 14px;
