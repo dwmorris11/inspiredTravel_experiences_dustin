@@ -23,7 +23,7 @@ class App extends React.Component {
     const url = new URL(window.location.href);
     const id = url.pathname;
 
-    axios.get(`${id}api/experiences`)
+    axios.get(`${id}api`)
       .then((res) => {
         this.setState({
           experiences: res.data,
