@@ -2,18 +2,19 @@ const express = require('express');
 const morgan = require('morgan');
 const Promise = require('bluebird');
 const mongoose = require('mongoose');
+const cors = require('cors');
 mongoose.Promise = require('bluebird');
 const { destinationModel } = require('../database/destinationDB.js');
 const { experienceModel } = require('../database/experiencesDB.js');
 const { db } = require('../database/index.js'); // eslint-disable-line
-// const axios = require('axios');
-// const { client } = require('../s3client.js');
+
 
 const app = express();
 const port = 3636;
 
 app.use(morgan('dev'));
-app.use('/:id/exp', express.static('./public/dist'));
+app.use(cors());
+app.use('/:id/exp/', express.static('./public/dist'));
 
 const findExperiences = (destination) => (
   Promise.map(destination[0].experiences, (id) => (

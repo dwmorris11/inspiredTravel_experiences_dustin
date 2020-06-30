@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 
 module.exports.quickViewSchema = new mongoose.Schema({
-  id: { type: Number, unique: true },
   category: String,
   subtitle: String,
   overview: String,
