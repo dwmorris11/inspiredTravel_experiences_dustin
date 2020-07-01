@@ -12,4 +12,4 @@ import '../public/dist/css/style.css';
 import '../public/dist/css/quickview.css';
 import '../public/dist/css/hearts.css';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('experiences'));
