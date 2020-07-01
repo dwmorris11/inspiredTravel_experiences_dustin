@@ -22,20 +22,23 @@ class QuickView extends React.Component {
       return ('');
     }
     return (
-      <QuickViewContainer
-        category={experience.quickview.category}
-        subtitle={experience.quickview.subtitle}
-        rating={experience.rating}
-        reviewCount={experience.review_count}
-        supplier={experience.quickview.supplier}
-        cost={experience.cost_unit.cost}
-        imageBaseUrl={imageBaseUrl}
-        image={experience.image}
-        mapSource={mapSource}
-        overview={experience.quickview.overview}
-        details={experience.quickview.details}
-        quickViewClose={quickViewClose}
-      />
+      <div>
+        <div className="Dim"></div>
+        <QuickViewContainer
+          category={experience.quickview.category}
+          subtitle={experience.quickview.subtitle}
+          rating={experience.rating}
+          reviewCount={experience.review_count}
+          supplier={experience.quickview.supplier}
+          cost={experience.cost_unit.cost}
+          imageBaseUrl={imageBaseUrl}
+          image={experience.image}
+          mapSource={mapSource}
+          overview={experience.quickview.overview}
+          details={experience.quickview.details}
+          quickViewClose={quickViewClose}
+        />
+      </div>
     );
   }
 }

@@ -3,7 +3,7 @@
   font-style: normal;
   font-weight: normal;
   font-display: swap;
-  src: url('../TripSans-Regular.woff2') format('woff2');
+  src: url('../fonts/TripSans-Regular.woff2') format('woff2');
  }
 
 @font-face {
@@ -11,7 +11,7 @@
   font-style: normal;
   font-weight: bold;
   font-display: swap;
-  src: url('../TripSans-Medium.woff2') format('woff2');
+  src: url('../fonts/TripSans-Medium.woff2') format('woff2');
 }
 
 @font-face {
@@ -19,5 +19,5 @@
   font-style: normal;
   font-weight: bold;
   font-display: swap;
-  src: url('../icomoon.woff') format('woff');
+  src: url('../fonts/icomoon.woff') format('woff');
 }
