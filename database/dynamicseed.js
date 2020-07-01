@@ -103,4 +103,4 @@ seed(100, insertDestination, (index) => {
 
 setTimeout(() => {
   dbConnection.close();
-}, 3000);
+}, 4000);
