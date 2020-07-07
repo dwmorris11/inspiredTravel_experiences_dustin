@@ -10,7 +10,7 @@ const { db } = require('../database/index.js'); // eslint-disable-line
 
 
 const app = express();
-const port = 3636;
+const port = 80;
 
 app.use(morgan('dev'));
 app.use(cors());
@@ -39,6 +39,19 @@ app.get('/:id/exp/api/', (req, res) => {
     .catch((error) => res.status(404).send(error));
 });
 
+app.get('/:id/exp/exp/api/', (req, res) => {
+  const { id } = req.params;
+  const numId = Number(id);
+  if (numId < 1 || numId > 100) {
+    res.status(404).send('ID is out of bounds.  Must be between 001-100');
+  }
+  destinationModel.find({ id: `${id}` })
+    .then((destination) => (findExperiences(destination)))
+    .then((query) => {
+      res.status(200).send(query);
+    })
+    .catch((error) => res.status(404).send(error));
+});
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);  // eslint-disable-line
 });

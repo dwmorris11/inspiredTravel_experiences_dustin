@@ -15,7 +15,7 @@ require("../database/index.js");
 describe('GET ROUTE `/:id/api/experiences`', () => {
   var response;
   beforeAll(() => {
-    return axios.get('http://localhost:3636/005/api/experiences')
+    return axios.get('http://localhost:3636/005/exp/api')
     .then((res) => {
       response = res.data;
     })
@@ -45,7 +45,7 @@ describe('GET ROUTE `/:id/api/experiences`', () => {
 describe('GET ROUTE `/id` where id does not exist', () => {
   var response;
   beforeAll(() => {
-    return axios.get('http://localhost:3636/999')
+    return axios.get('http://localhost:3636/999/exp')
     .then((res) => {
       response = res.data;
     })

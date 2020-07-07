@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
 
-const mongoUri = 'mongodb://localhost/experiences';
+const mongoUri = 'mongodb://database/experiences';
 const db = mongoose.connect(mongoUri, {
   useNewUrlParser: true,
   useUnifiedTopology: true,

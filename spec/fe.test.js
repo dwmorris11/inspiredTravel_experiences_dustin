@@ -213,9 +213,9 @@ describe('Interactivity', () => {
   let page;
   beforeAll(async () => {
     try{
-      browser = await puppeteer.launch();
+      browser = await puppeteer.launch({headless: true});
       page = await browser.newPage();
-      await page.goto('http://localhost:3636/007');
+      await page.goto('http://localhost:3636/050/exp');
     } catch (e) {
       console.log(e);
       return e;
@@ -259,23 +259,23 @@ describe('Interactivity', () => {
   })();
   });
 
-  // it('should have a QuickView close', (done) => {
-  //   (async function () {
-  //     let content;
-  //   try {
-  //     content = await page.content();
-  //     console.log(content);
-  //     await page.waitForSelector('#exit');
-  //     await page.on('load', page.screenshot({path: 'quickview.png'}));
-  //     await page.click('#exit');
-  //     const quickView = await page.$('.QuickView');
-  //     expect(quickView).not.toEqual('QuickView');
-  //     expect(quickView).toEqual(null);
-  //     done();
-  //   } catch (error) {
-  //     done(error);
-  //   }
-  // })();
-  // });
+  it('should have a QuickView close', (done) => {
+    (async function () {
+      let content;
+    try {
+      content = await page.content();
+      console.log(content);
+      await page.waitForSelector('#exit');
+      await page.on('load', page.screenshot({path: 'quickview.png'}));
+      await page.click('#exit');
+      const quickView = await page.$('.QuickView');
+      expect(quickView).not.toEqual('QuickView');
+      expect(quickView).toEqual(null);
+      done();
+    } catch (error) {
+      done(error);
+    }
+  })();
+  });
 
 });

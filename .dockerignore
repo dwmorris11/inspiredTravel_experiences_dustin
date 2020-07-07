@@ -1,0 +1,8 @@
+/spec/
+/circleci/
+/__mocks__/
+/s3client.js/
+/client/
+/node_modules/
+/quickview.png/
+/tacover.pem/
