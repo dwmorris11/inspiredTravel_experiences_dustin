@@ -1,6 +1,5 @@
-* Inspired_Travel_Experiences_Dustin
 
-# Project Name
+# Inspired Travel
 
 > Single page web application for users to shop for memorable experiences and tours on their vacations.
 
