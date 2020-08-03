@@ -1,40 +1,26 @@
-* Tripadvisor_Experiences_Dustin
+* Inspired_Travel_Experiences_Dustin
 
 # Project Name
 
-> Trip Advisor Cover
-
-## Related Projects
-
-  - https://github.com/Seattle-Navigators/Tripadvisor_NearByAttractions_Module_Jim.git
-  - https://github.com/Seattle-Navigators/CJ_TripAdvisor_Image-carosel.git
-  - https://github.com/Seattle-Navigators/Tripadvisor_Reviews_Module_Chelsea.git
-  - https://github.com/Seattle-Navigators/Tripadvisor_Experiences_Dustin_.git
+> Single page web application for users to shop for memorable experiences and tours on their vacations.
 
 ## Table of Contents
 
 1. [Usage](#Usage)
 1. [Requirements](#requirements)
-1. [Development](#development)
+
 
 ## Usage
 
-> Some usage instructions
+> npm start to start the server
+> npm build to create the webpack bundle
 
 ## Requirements
 
-An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
-
 - Node 6.13.0
-- etc
-
-## Development
 
 ### Installing Dependencies
 
 From within the root directory:
 
-```sh
-npm install -g webpack
-npm install
-```
+> npm install to install the dependencies
